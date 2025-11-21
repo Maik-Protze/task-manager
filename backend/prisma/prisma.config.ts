@@ -3,7 +3,13 @@ export default {
     db: {
       provider: "postgresql",
       // PostgreSQL connection string from environment
-      url: process.env.DATABASE_URL ?? "postgresql://postgres:password@localhost:5432/reiseinfo_db",
+      // Prisma v7 empfiehlt, die URL hier zu setzen statt im Schema
+      url: process.env.DATABASE_URL ?? "postgresql://postgres:password@localhost:5433/reiseinfo_db?schema=public",
+    },
+  },
+  generator: {
+    client: {
+      provider: "prisma-client-js",
     },
   },
 };
