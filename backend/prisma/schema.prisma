@@ -3,7 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Task {
@@ -29,9 +30,37 @@ model Tour {
   description   String?
   price         Float
   seatsTotal    Int
-  seatsBooked   Int      @default(0)
-  createdAt     DateTime @default(now())
+  seatsBooked   Int         @default(0)
+  category      String      @default("Allgemein") // Sommerreisen, Familienreisen, Abenteuerreisen, Flitterwochen, Inlandsreisen, Auslandsreisen
+  imageUrl      String?
+  featured      Boolean     @default(false)
+  duration      Int         @default(7) // Tage
+  included      String?     // JSON string für inkludierte Leistungen
+  createdAt     DateTime    @default(now())
   bookings      Booking[]
+}
+
+model BlogPost {
+  id          Int      @id @default(autoincrement())
+  title       String
+  content     String
+  excerpt     String?
+  imageUrl    String?
+  author      String   @default("Reisebüro Team")
+  category    String   @default("Reisetipps") // Reisetipps, Destinationen, Kultur
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+}
+
+model ContactInquiry {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  message     String
+  destination String?
+  travelDate  String?
+  persons     Int?
+  createdAt   DateTime @default(now())
 }
 
 model Booking {
