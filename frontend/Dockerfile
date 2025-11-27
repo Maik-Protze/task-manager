@@ -1,15 +1,20 @@
-FROM node:20-alpine
+FROM oven/bun:1.3-alpine
 
 WORKDIR /app
 
-# copy package manifests and install dependencies
-COPY package*.json ./
-RUN npm ci --silent
+# Copy package files
+COPY package.json bun.lock* ./
 
-# copy source files
+# Install dependencies
+RUN bun install --frozen-lockfile
+
+# Copy source code
 COPY . .
 
-EXPOSE 5173
+EXPOSE 5175
 
-# Start Vite dev server and bind to host so it's reachable from outside the container
-CMD ["npm", "run", "dev", "--", "--host"]
+# Build for production
+RUN bun run build
+
+# Start Vite dev server with host binding
+CMD ["bun", "run", "dev", "--host"]

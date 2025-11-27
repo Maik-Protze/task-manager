@@ -20,7 +20,7 @@ Führe diese Befehle aus:
 cd backend
 
 # Datenbank mit Touren, Bildern und Destinationen füllen
-npm run prisma:seed
+bun run prisma/seed-travel.ts
 ```
 
 **Erwartete Ausgabe:**
@@ -34,7 +34,7 @@ Blog posts created: 4
 
 ### Schritt 3: Backend neu starten
 ```bash
-npm run dev
+bun run start
 ```
 
 ### Schritt 4: Browser aktualisieren
@@ -64,7 +64,7 @@ Du solltest JSON-Daten mit allen Touren sehen.
 ### Frontend testen:
 Öffne im Browser:
 ```
-http://localhost:5173
+http://localhost:5175
 ```
 
 Gehe zu "Reiseangebote" - alle 12 Touren mit Bildern sollten sichtbar sein.
@@ -79,13 +79,13 @@ Gehe zu "Reiseangebote" - alle 12 Touren mit Bildern sollten sichtbar sein.
 cd backend
 
 # Datenbank komplett zurücksetzen
-npm run prisma:migrate:reset
+bun prisma migrate reset
 
 # Seed-Daten neu laden
-npm run prisma:seed
+bun run prisma/seed-travel.ts
 
 # Backend starten
-npm run dev
+bun run start
 ```
 
 **Warnung:** Dies löscht ALLE Daten in der Datenbank!
@@ -110,9 +110,9 @@ Ohne `npm run prisma:seed` ist die Datenbank leer → keine Touren → keine Bil
 ## ✅ Checkliste
 
 - [ ] Backend gestoppt (`Ctrl+C`)
-- [ ] `npm run prisma:seed` ausgeführt
+- [ ] `bun run prisma/seed-travel.ts` ausgeführt
 - [ ] Erfolgsmeldung gesehen
-- [ ] Backend neu gestartet (`npm run dev`)
+- [ ] Backend neu gestartet (`bun run start`)
 - [ ] Browser aktualisiert (`F5`)
 - [ ] Touren und Bilder sind sichtbar
 

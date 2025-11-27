@@ -107,7 +107,7 @@ export default function Tours() {
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value)}
                             >
-                                <option value="">Standard</option>
+                                <option value="">Empfehlung</option>
                                 <option value="price_asc">Preis (Niedrig - Hoch)</option>
                                 <option value="price_desc">Preis (Hoch - Niedrig)</option>
                             </select>

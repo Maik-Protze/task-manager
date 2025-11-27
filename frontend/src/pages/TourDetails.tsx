@@ -21,7 +21,7 @@ type Tour = {
 }
 
 export default function TourDetails() {
-  const { id } = useParams<{ id: string }>()
+  const { id } = useParams()
   const [tour, setTour] = useState<Tour | null>(null)
   const [loading, setLoading] = useState(true)
   const [bookingForm, setBookingForm] = useState({
@@ -50,7 +50,7 @@ export default function TourDetails() {
     if (!id) return
 
     try {
-      const response = await fetch('http://localhost:4000/api/bookings', {
+      const response = await fetch('http://localhost:3000/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

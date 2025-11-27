@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 
 const summerCategories = [
-    { title: 'Party & Fun', emoji: '🎉', category: 'Party' },
-    { title: 'Active & Sport', emoji: '🏄', category: 'Sport' },
-    { title: 'Nature & Chill', emoji: '🏔️', category: 'Nature' },
-    { title: 'Luxury & Sea', emoji: '💎', category: 'Luxury' },
+    { title: 'Party & Spaß', emoji: '🎉', category: 'Party' },
+    { title: 'Aktiv & Sport', emoji: '🏄', category: 'Sport' },
+    { title: 'Natur & Entspannung', emoji: '🏔️', category: 'Natur' },
+    { title: 'Luxus & Meer', emoji: '💎', category: 'Luxus' },
 ]
 
 const exclusiveSummerOffers = [
@@ -50,19 +50,19 @@ const exclusiveSummerOffers = [
 
 const summerEvents = [
     {
-        title: 'Summer Sound Festival',
+        title: 'Sommer Sound Festival',
         date: '15. - 18. Juli 2026',
         location: 'Barcelona, Spanien',
         image: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop' // Festival crowd
     },
     {
-        title: 'Full Moon Beach Party',
+        title: 'Vollmond Strand Party',
         date: '12. August 2026',
         location: 'Koh Phangan, Thailand',
         image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop' // Beach party fire
     },
     {
-        title: 'Street Food Carnival',
+        title: 'Street Food Karneval',
         date: '05. - 07. Juni 2026',
         location: 'Berlin, Deutschland',
         image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop' // Food stall
@@ -100,7 +100,7 @@ export default function SummerPrograms() {
                         marginBottom: '1rem',
                         display: 'inline-block'
                     }}>
-                        Summer 2026 Collection
+                        Sommer 2026 Kollektion
                     </span>
                     <h1 style={{ color: 'white', marginBottom: 'var(--spacing-md)', fontSize: '4rem', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                         Unvergessliche Momente

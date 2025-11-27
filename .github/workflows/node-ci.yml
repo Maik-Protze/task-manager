@@ -11,26 +11,38 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        bun-version: ['1.3.0', 'latest']
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - name: Setup Bun ${{ matrix.bun-version }}
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          bun-version: ${{ matrix.bun-version }}
+      - name: Install root dependencies
+        run: bun install
       - name: Install backend dependencies
         run: |
           cd backend
-          npm ci
+          bun install
       - name: Install frontend dependencies
         run: |
-          cd frontend
-          npm ci
-      - name: Build backend (no-fail)
+          cd frontend  
+          bun install
+      - name: Generate Prisma Client
         run: |
           cd backend
-          npm run build || true
-      - name: Build frontend (no-fail)
+          bun prisma generate
+      - name: Build backend
+        run: |
+          cd backend
+          bun run build
+      - name: Build frontend
         run: |
           cd frontend
-          npm run build || true
+          bun run build
+      - name: Test API endpoints (optional)
+        run: |
+          cd backend
+          timeout 10s bun run start &
+          sleep 5
+          curl -f http://localhost:3000/ || echo "API test skipped"

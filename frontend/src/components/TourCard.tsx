@@ -27,8 +27,33 @@ export default function TourCard({ tour }: TourCardProps) {
         ? tour.seatsTotal - tour.seatsBooked
         : null;
 
-    // Fallback image if none provided
-    const imageUrl = tour.imageUrl || '/destinations/default.jpg';
+    // Intelligent image selection based on destination or tour content
+    const getImageUrl = () => {
+        if (tour.imageUrl) return tour.imageUrl;
+        
+        // Use destination city if available
+        if (tour.destination?.city) {
+            const city = tour.destination.city;
+            if (city === 'Berlin') return '/germany/berlin.jpg';
+            if (city === 'Leipzig') return '/germany/leipzig.jpg';
+            if (city === 'Damascus' || city === 'Damaskus') return '/syria/damascus.jpg';
+            if (city === 'Aleppo' || city === 'Haleb') return '/syria/aleppo.jpg';
+        }
+        
+        // Fallback based on tour title keywords
+        const title = tour.title.toLowerCase();
+        if (title.includes('berlin')) return '/germany/berlin.jpg';
+        if (title.includes('leipzig')) return '/germany/leipzig.jpg';
+        if (title.includes('damascus') || title.includes('damaskus')) return '/syria/damascus.jpg';
+        if (title.includes('aleppo') || title.includes('haleb')) return '/syria/aleppo.jpg';
+        if (title.includes('deutschland') || title.includes('german')) return '/germany/berlin.jpg';
+        if (title.includes('syrien') || title.includes('syria')) return '/syria/damascus.jpg';
+        
+        // Final fallback
+        return 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop';
+    };
+
+    const imageUrl = getImageUrl();
 
     return (
         <div className="card">
@@ -37,7 +62,15 @@ export default function TourCard({ tour }: TourCardProps) {
                 alt={tour.title}
                 className="card-image"
                 onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop';
+                    // If local image fails, try a relevant Unsplash image
+                    const title = tour.title.toLowerCase();
+                    if (title.includes('berlin') || title.includes('deutschland')) {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1566404791232-af9fe0ae8f8b?w=600&h=400&fit=crop';
+                    } else if (title.includes('damascus') || title.includes('damaskus') || title.includes('syrien')) {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop';
+                    } else {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop';
+                    }
                 }}
             />
 

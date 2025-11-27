@@ -11,23 +11,23 @@ type Destination = {
   tours?: Array<{ id: number; title: string; price: number }>
 }
 
-type Mood = 'All' | 'Romantik' | 'City Life' | 'Kultur' | 'Abenteuer' | 'Luxus'
+type Mood = 'All' | 'Romantik' | 'Stadtleben' | 'Kultur' | 'Abenteuer' | 'Luxus'
 
 const moodMapping: { [key: string]: Mood[] } = {
-  'Paris': ['Romantik', 'Kultur', 'City Life'],
+  'Paris': ['Romantik', 'Kultur', 'Stadtleben'],
   'Santorini': ['Romantik', 'Luxus'],
   'Malediven': ['Romantik', 'Luxus', 'Abenteuer'], // Abenteuer (Diving)
   'Malé': ['Romantik', 'Luxus', 'Abenteuer'],
-  'Rom': ['Kultur', 'Romantik', 'City Life'],
-  'Berlin': ['City Life', 'Kultur'],
-  'London': ['City Life', 'Kultur'],
-  'New York': ['City Life', 'Luxus'],
-  'Dubai': ['Luxus', 'City Life', 'Abenteuer'],
-  'Barcelona': ['Kultur', 'City Life', 'Abenteuer'],
-  'Istanbul': ['Kultur', 'City Life'],
+  'Rom': ['Kultur', 'Romantik', 'Stadtleben'],
+  'Berlin': ['Stadtleben', 'Kultur'],
+  'London': ['Stadtleben', 'Kultur'],
+  'New York': ['Stadtleben', 'Luxus'],
+  'Dubai': ['Luxus', 'Stadtleben', 'Abenteuer'],
+  'Barcelona': ['Kultur', 'Stadtleben', 'Abenteuer'],
+  'Istanbul': ['Kultur', 'Stadtleben'],
   'Prag': ['Kultur', 'Romantik'],
-  'Amsterdam': ['City Life', 'Kultur'],
-  'München': ['Kultur', 'City Life'],
+  'Amsterdam': ['Stadtleben', 'Kultur'],
+  'München': ['Kultur', 'Stadtleben'],
 }
 
 export default function Destinations() {
@@ -49,9 +49,19 @@ export default function Destinations() {
 
   const getDestinationImage = (city: string) => {
     const images: { [key: string]: string } = {
-      'Berlin': 'https://images.unsplash.com/photo-1566404791232-af9fe0ae8f8b?w=800&h=600&fit=crop',
-      'München': 'https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=800&h=600&fit=crop', // Munich New Town Hall
-      'Paris': 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop&v=2', // Classic Eiffel Tower
+      // Deutsche Städte - lokale Bilder
+      'Berlin': '/germany/berlin.jpg',
+      'Leipzig': '/germany/leipzig.jpg',
+      'München': 'https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=800&h=600&fit=crop',
+      
+      // Syrische Städte - lokale Bilder
+      'Damascus': '/syria/damascus.jpg',
+      'Damaskus': '/syria/damascus.jpg',
+      'Aleppo': '/syria/aleppo.jpg',
+      'Haleb': '/syria/aleppo.jpg',
+      
+      // Internationale Destinationen - Unsplash
+      'Paris': 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop&v=2',
       'Barcelona': 'https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&h=600&fit=crop',
       'Istanbul': 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=600&fit=crop',
       'Santorini': 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop',
@@ -110,7 +120,7 @@ export default function Destinations() {
       <section style={{ padding: 'var(--spacing-xl) 0', background: 'var(--color-bg-secondary)', position: 'sticky', top: '70px', zIndex: 10, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            {(['All', 'Romantik', 'City Life', 'Kultur', 'Abenteuer', 'Luxus'] as Mood[]).map((mood) => (
+            {(['All', 'Romantik', 'Stadtleben', 'Kultur', 'Abenteuer', 'Luxus'] as Mood[]).map((mood) => (
               <button
                 key={mood}
                 onClick={() => setActiveMood(mood)}

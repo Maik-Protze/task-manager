@@ -86,7 +86,7 @@ export default function App() {
                   }}
                 >
                   <span style={{ fontSize: '1.25rem' }}>🏠</span>
-                  <span>Home</span>
+                  <span>Startseite</span>
                 </Link>
                 <Link
                   to="/tours"
@@ -218,7 +218,7 @@ export default function App() {
                 }}
               >
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
-                  <span>🏠</span> Home
+                  <span>🏠</span> Startseite
                 </Link>
                 <Link to="/tours" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
                   <span>🗺️</span> Reiseangebote
