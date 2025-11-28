@@ -33,6 +33,16 @@ async function main() {
         },
     });
 
+    const leipzig = await prisma.destination.upsert({
+        where: { id: 14 },
+        update: {},
+        create: {
+            country: 'Deutschland',
+            city: 'Leipzig',
+            description: 'Die Musikstadt mit reicher Geschichte, Völkerschlachtdenkmal und lebendiger Kulturszene.',
+        },
+    });
+
     const paris = await prisma.destination.upsert({
         where: { id: 3 },
         update: {},
@@ -332,6 +342,23 @@ async function main() {
                 featured: false,
                 duration: 3,
                 included: JSON.stringify(['Hotel 3*', 'Frühstück', 'Welcome Card', 'Stadtführung']),
+            },
+        }),
+
+        // Leipzig
+        prisma.tour.create({
+            data: {
+                destinationId: leipzig.id,
+                title: 'Leipzig Kulturerlebnis',
+                description: 'Geschichte, Kultur und Wellness in Sachsens Metropole. Vom Völkerschlachtdenkmal bis zum Auerbachskeller.',
+                price: 599,
+                seatsTotal: 25,
+                seatsBooked: 8,
+                category: 'Inlandsreisen',
+                imageUrl: '/germany/leipzig-hero.jpg',
+                featured: true,
+                duration: 5,
+                included: JSON.stringify(['Bahnfahrt 1. Klasse', 'Hotel im Stadtzentrum', 'Frühstück täglich', 'Alle Eintritte', 'Leipzig Card', 'Reiseleitung']),
             },
         }),
 

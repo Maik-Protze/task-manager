@@ -20,6 +20,7 @@ const moodMapping: { [key: string]: Mood[] } = {
   'Malé': ['Romantik', 'Luxus', 'Abenteuer'],
   'Rom': ['Kultur', 'Romantik', 'Stadtleben'],
   'Berlin': ['Stadtleben', 'Kultur'],
+  'Leipzig': ['Kultur', 'Stadtleben'],
   'London': ['Stadtleben', 'Kultur'],
   'New York': ['Stadtleben', 'Luxus'],
   'Dubai': ['Luxus', 'Stadtleben', 'Abenteuer'],
