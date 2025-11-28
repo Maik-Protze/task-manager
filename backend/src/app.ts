@@ -23,7 +23,7 @@ app.use("/api/contact", contactRouter);
 // Root-Route
 app.get("/", (_req, res) => {
   res.send(
-    "Abschlussprojekt-Reiseinfo-Syrien-Deutschland API läuft. Verwenden Sie /api/destinations, /api/tours, /api/bookings"
+    "Abschlussprojekt-Reiseinfo-Europa-Asien-Afrika API läuft. Verwenden Sie /api/destinations, /api/tours, /api/bookings"
   );
 });
 

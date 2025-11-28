@@ -1,6 +1,6 @@
-# Abschlussprojekt — Reiseinfo Syrien — Deutschland
+# Abschlussprojekt — Reiseinfo Europa — Asien/Afrika
 
-Dieses Repository enthält das Abschlussprojekt "Reiseinfo Syrien — Deutschland". Das Projekt basiert auf einer einfachen Task-Manager-Anwendung (Express + Prisma im Backend, React + Vite im Frontend) und wurde angepasst, um als Grundlage für das Abschlussprojekt zu dienen.
+Dieses Repository enthält das Abschlussprojekt "Reiseinfo Europa — Asien/Afrika". Das Projekt basiert auf einer einfachen Task-Manager-Anwendung (Express + Prisma im Backend, React + Vite im Frontend) und wurde angepasst, um als Grundlage für das Abschlussprojekt zu dienen.
 
 Kurzer Überblick:
 
@@ -29,4 +29,4 @@ npm install
 npm run dev
 ```
 
-Wenn du möchtest, kann ich die alten README-Templates in `frontend/` bereinigen oder die Dokumentation weiter ausbauen.
+Wenn du möchtest, können wir die alten README-Templates in `frontend/` bereinigen oder die Dokumentation weiter ausbauen.

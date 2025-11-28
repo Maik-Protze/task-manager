@@ -15,7 +15,7 @@ const server = Bun.serve({
       const url = new URL(request.url);
       
       if (url.pathname === '/') {
-        resolve(new Response('Abschlussprojekt-Reiseinfo-Syrien-Deutschland API läuft mit Bun! 🚀'));
+        resolve(new Response('Abschlussprojekt-Reiseinfo-Europa-Asien-Afrika API läuft mit Bun! 🚀'));
       } else {
         resolve(new Response('Route nicht gefunden', { status: 404 }));
       }

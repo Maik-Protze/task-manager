@@ -34,8 +34,8 @@ const TravelDreamsPresentation: React.FC = () => {
         <div>
           <h2 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>📋 Projekt Features</h2>
           <ul style={{ fontSize: '1.5rem', lineHeight: '2' }}>
-            <li>✅ <strong>12 Premium Touren</strong> - Syrien & Deutschland</li>
-            <li>✅ <strong>8 Destinationen</strong> - Damaskus bis Berlin</li>
+            <li>✅ <strong>12 Premium Touren</strong> - Europa-Asien/Afrika</li>
+            <li>✅ <strong>8 Destinationen</strong> - Berlin - Dubai</li>
             <li>✅ <strong>Vollständig auf Deutsch</strong> - Lokalisierung 100%</li>
             <li>✅ <strong>Moderne Technologien</strong> - React + TypeScript</li>
             <li>✅ <strong>SQLite Datenbank</strong> - Performante Datenspeicherung</li>
@@ -56,7 +56,7 @@ const TravelDreamsPresentation: React.FC = () => {
               <ul>
                 <li>⚛️ React 18</li>
                 <li>🔷 TypeScript</li>
-                <li>⚡ Vite (Port 5176)</li>
+                <li>⚡ Vite (Port 5175 oder 5176)</li>
                 <li>🎨 CSS Custom Properties</li>
                 <li>📱 Responsive Design</li>
               </ul>
@@ -82,7 +82,7 @@ const TravelDreamsPresentation: React.FC = () => {
         <div style={{ textAlign: 'center' }}>
           <h2 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>🎬 Live Demonstration</h2>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
-            <p><strong>Frontend:</strong> http://localhost:5176</p>
+            <p><strong>Frontend:</strong> http://localhost:5175 oder 5176</p>
             <p><strong>Backend API:</strong> http://localhost:3000/api/tours</p>
           </div>
           <div style={{ background: '#f1f5f9', padding: '2rem', borderRadius: '1rem' }}>

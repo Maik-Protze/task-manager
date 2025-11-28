@@ -1,6 +1,6 @@
 # Frontend (Projekt-Readme)
 
-Dieses Frontend ist Teil des Abschlussprojekts "Reiseinfo Syrien — Deutschland".
+Dieses Frontend ist Teil des Abschlussprojekts "Reiseinfo Europa — Asien/Afrika".
 
 Starten:
 
@@ -16,4 +16,4 @@ Hauptdateien:
 - `src/main.tsx` – Einstieg
 - `src/App.tsx` – Hauptkomponente
 
-Weitere Hilfe: Öffne `README.md` im Projekt-Root oder frage mich, ich passe die Anleitung gern an.
+Weitere Hilfe: Öffne `README.md` im Projekt-Root oder frage uns, wir passen die Anleitung gern an.

@@ -67,4 +67,4 @@ Port‑Konflikt (häufige Frage)
 
 ---
 
-Datei: `MEETING_BRIEF.md` (im Repo‑Root). Wenn du willst, kann ich daraus sofort eine PDF generieren oder eine kurze `README.md` erstellen, die du im GitHub‑Repo anzeigst.
+Datei: `MEETING_BRIEF.md` (im Repo‑Root). Wenn du willst, können wir daraus sofort eine PDF generieren oder eine kurze `README.md` erstellen, die du im GitHub‑Repo anzeigst.
