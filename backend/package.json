@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "bun --watch src/index.ts",
-    "start": "bun src/index.ts",
+    "dev": "bun --watch index-bun.ts",
+    "start": "bun index-bun.ts",
     "build": "tsc -p .",
     "bun:dev": "bun --watch bun-server.ts",
     "bun:start": "bun bun-server.ts",

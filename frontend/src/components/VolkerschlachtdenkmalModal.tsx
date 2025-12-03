@@ -13,16 +13,16 @@ const VolkerschlachtdenkmalModal: React.FC<VolkerschlachtdenkmalModalProps> = ({
 
     const images = {
         exterior: [
-            '/germany/leipzig.jpg',
-            '/germany/leipzig-hero.jpg'
+            '/germany/leipzig/voelkerschlachtdenkmal-aussen.jpg',
+            '/germany/leipzig/leipzig-panorama.jpg'
         ],
         interior: [
-            '/germany/leipzig-hero.jpg',
-            '/germany/leipzig.jpg'
+            '/germany/leipzig/voelkerschlacht-innenraum.jpg',
+            '/germany/leipzig/leipzig-panorama.jpg'
         ],
         museum: [
-            '/germany/leipzig.jpg',
-            '/germany/leipzig-hero.jpg'
+            '/germany/leipzig/leipzig-museum.jpg',
+            '/germany/leipzig/voelkerschlachtdenkmal-aussen.jpg'
         ]
     };
 
