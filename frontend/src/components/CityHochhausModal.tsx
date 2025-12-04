@@ -8,6 +8,7 @@ interface CityHochhausModalProps {
 
 const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }) => {
     const [activeTab, setActiveTab] = useState<'overview' | 'exterior' | 'interior' | 'panorama' | 'info'>('overview');
+    const [panoramaDirection, setPanoramaDirection] = useState<'nord' | 'ost' | 'sued' | 'west'>('nord');
 
     if (!isOpen) return null;
 
@@ -20,10 +21,39 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
             '/germany/leipzig/city-hochhaus-lobby.jpg',
             '/germany/leipzig/uni-riese-innen.jpg'
         ],
-        panorama: [
-            '/germany/leipzig/leipzig-panorama.jpg',
-            '/germany/leipzig/city-hochhaus-aussicht.jpg'
-        ]
+        panorama: {
+            nord: '/germany/leipzig/panorama-nord.jpg',
+            ost: '/germany/leipzig/panorama-ost.jpg',
+            sued: '/germany/leipzig/panorama-sued.jpg',
+            west: '/germany/leipzig/panorama-west.jpg'
+        }
+    };
+
+    const panoramaDirections = {
+        nord: { 
+            name: 'Nord', 
+            icon: '🧭', 
+            landmarks: ['Leipziger Messe', 'Flughafen Leipzig/Halle', 'Neue Messe', 'Porsche-Werk'],
+            fallback: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop'
+        },
+        ost: { 
+            name: 'Ost', 
+            icon: '🌅', 
+            landmarks: ['Völkerschlachtdenkmal', 'Cospudener See', 'Südfriedhof', 'Monument der Schlacht'],
+            fallback: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=800&h=500&fit=crop'
+        },
+        sued: { 
+            name: 'Süd', 
+            icon: '🌳', 
+            landmarks: ['Clara-Zetkin-Park', 'Auwald', 'Cospudener See', 'Kulkwitzer See'],
+            fallback: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop'
+        },
+        west: { 
+            name: 'West', 
+            icon: '🏛️', 
+            landmarks: ['Innenstadt', 'Thomaskirche', 'Gewandhaus', 'Altes Rathaus', 'Nikolaikirche'],
+            fallback: 'https://images.unsplash.com/photo-1520637836862-4d197d17c27a?w=800&h=500&fit=crop'
+        }
     };
 
     const renderContent = () => {
@@ -135,43 +165,206 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                 );
 
             case 'panorama':
+                const currentDirection = panoramaDirections[panoramaDirection];
                 return (
                     <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🌆 Panorama-Aussicht vom City-Hochhaus</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-                            {images.panorama.map((img, index) => (
-                                <div key={index}>
-                                    <img 
-                                        src={img}
-                                        alt={`Leipzig Panorama ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                                        onError={(e) => {
-                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1567696911980 + index * 3000}?w=400&h=300&fit=crop`;
-                                        }}
-                                    />
-                                </div>
+                        <h3 style={{ color: '#3b82f6', marginBottom: '1rem' }}>
+                            🌆 360° Panorama-Rundblick vom City-Hochhaus
+                        </h3>
+                        
+                        {/* Direction Navigation */}
+                        <div style={{ 
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            gap: '0.5rem', 
+                            marginBottom: '1.5rem',
+                            flexWrap: 'wrap'
+                        }}>
+                            {Object.entries(panoramaDirections).map(([key, direction]) => (
+                                <button
+                                    key={key}
+                                    onClick={() => setPanoramaDirection(key as 'nord' | 'ost' | 'sued' | 'west')}
+                                    style={{
+                                        padding: '0.7rem 1.2rem',
+                                        border: 'none',
+                                        borderRadius: '25px',
+                                        background: panoramaDirection === key ? '#3b82f6' : '#f1f5f9',
+                                        color: panoramaDirection === key ? 'white' : '#64748b',
+                                        fontWeight: panoramaDirection === key ? 'bold' : 'normal',
+                                        cursor: 'pointer',
+                                        fontSize: '0.9rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: panoramaDirection === key ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        if (panoramaDirection !== key) {
+                                            e.currentTarget.style.background = '#e2e8f0';
+                                        }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        if (panoramaDirection !== key) {
+                                            e.currentTarget.style.background = '#f1f5f9';
+                                        }
+                                    }}
+                                >
+                                    <span>{direction.icon}</span>
+                                    <span>{direction.name}</span>
+                                </button>
                             ))}
                         </div>
-                        <div>
-                            <h4>🔭 Aussichtspunkte</h4>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
-                                <div>
-                                    <ul>
-                                        <li><strong>360° Rundumblick:</strong> Komplette Stadtansicht</li>
-                                        <li><strong>Völkerschlachtdenkmal:</strong> Südlicher Stadtrand</li>
-                                        <li><strong>Leipziger Messe:</strong> Nördliche Richtung</li>
-                                        <li><strong>Innenstadt:</strong> Historisches Zentrum</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li><strong>Auwald:</strong> Grünes Leipzig</li>
-                                        <li><strong>Gewandhaus:</strong> Kulturelles Zentrum</li>
-                                        <li><strong>Hauptbahnhof:</strong> Verkehrsknotenpunkt</li>
-                                        <li><strong>Thomaskirche:</strong> Bach-Wirkungsstätte</li>
-                                    </ul>
-                                </div>
+
+                        {/* Current Panorama View */}
+                        <div style={{ 
+                            position: 'relative', 
+                            marginBottom: '2rem',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                        }}>
+                            <img 
+                                src={images.panorama[panoramaDirection]}
+                                alt={`Leipzig Panorama Richtung ${currentDirection.name}`}
+                                style={{ 
+                                    width: '100%', 
+                                    height: '300px', 
+                                    objectFit: 'cover',
+                                    transition: 'all 0.5s ease'
+                                }}
+                                onError={(e) => {
+                                    e.currentTarget.src = currentDirection.fallback;
+                                }}
+                            />
+                            
+                            {/* Direction Overlay */}
+                            <div style={{
+                                position: 'absolute',
+                                top: '1rem',
+                                left: '1rem',
+                                background: 'rgba(0,0,0,0.7)',
+                                color: 'white',
+                                padding: '0.5rem 1rem',
+                                borderRadius: '20px',
+                                fontSize: '1rem',
+                                fontWeight: 'bold',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}>
+                                <span>{currentDirection.icon}</span>
+                                <span>Blickrichtung {currentDirection.name}</span>
                             </div>
+
+                            {/* Navigation Arrows */}
+                            <button
+                                onClick={() => {
+                                    const directions = ['nord', 'ost', 'sued', 'west'] as const;
+                                    const currentIndex = directions.indexOf(panoramaDirection);
+                                    const prevIndex = currentIndex === 0 ? directions.length - 1 : currentIndex - 1;
+                                    setPanoramaDirection(directions[prevIndex]);
+                                }}
+                                style={{
+                                    position: 'absolute',
+                                    left: '1rem',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'rgba(255,255,255,0.9)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '40px',
+                                    height: '40px',
+                                    cursor: 'pointer',
+                                    fontSize: '1.2rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+                                }}
+                            >
+                                ←
+                            </button>
+                            
+                            <button
+                                onClick={() => {
+                                    const directions = ['nord', 'ost', 'sued', 'west'] as const;
+                                    const currentIndex = directions.indexOf(panoramaDirection);
+                                    const nextIndex = currentIndex === directions.length - 1 ? 0 : currentIndex + 1;
+                                    setPanoramaDirection(directions[nextIndex]);
+                                }}
+                                style={{
+                                    position: 'absolute',
+                                    right: '1rem',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'rgba(255,255,255,0.9)',
+                                    border: 'none',
+                                    borderRadius: '50%',
+                                    width: '40px',
+                                    height: '40px',
+                                    cursor: 'pointer',
+                                    fontSize: '1.2rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
+                                }}
+                            >
+                                →
+                            </button>
+                        </div>
+
+                        {/* Landmarks Info */}
+                        <div style={{ 
+                            background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+                            padding: '1.5rem',
+                            borderRadius: '12px',
+                            border: '1px solid #cbd5e1'
+                        }}>
+                            <h4 style={{ 
+                                color: '#3b82f6', 
+                                marginBottom: '1rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}>
+                                <span>{currentDirection.icon}</span>
+                                Sichtbare Landmarks - Richtung {currentDirection.name}
+                            </h4>
+                            <div style={{ 
+                                display: 'grid', 
+                                gridTemplateColumns: window.innerWidth > 768 ? 'repeat(2, 1fr)' : '1fr', 
+                                gap: '0.8rem'
+                            }}>
+                                {currentDirection.landmarks.map((landmark, index) => (
+                                    <div 
+                                        key={index}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            padding: '0.5rem',
+                                            background: 'rgba(255,255,255,0.7)',
+                                            borderRadius: '8px',
+                                            fontSize: '0.95rem'
+                                        }}
+                                    >
+                                        <span style={{ color: '#3b82f6' }}>📍</span>
+                                        <span style={{ fontWeight: '500' }}>{landmark}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* 360° Info */}
+                        <div style={{ 
+                            marginTop: '1.5rem',
+                            textAlign: 'center',
+                            fontSize: '0.9rem',
+                            color: '#64748b'
+                        }}>
+                            💡 <strong>Tipp:</strong> Nutzen Sie die Pfeiltasten oder klicken Sie die Richtungen, um den kompletten 360°-Rundblick zu erleben!
                         </div>
                     </div>
                 );
