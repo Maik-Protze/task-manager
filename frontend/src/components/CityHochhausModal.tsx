@@ -7,53 +7,22 @@ interface CityHochhausModalProps {
 }
 
 const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }) => {
-    const [activeTab, setActiveTab] = useState<'overview' | 'exterior' | 'interior' | 'panorama' | 'info'>('overview');
-    const [panoramaDirection, setPanoramaDirection] = useState<'nord' | 'ost' | 'sued' | 'west'>('nord');
+    const [activeTab, setActiveTab] = useState<'overview' | 'exterior' | 'interior' | 'panorama' | 'preise'>('overview');
 
     if (!isOpen) return null;
 
     const images = {
         exterior: [
-            '/germany/leipzig/city-hochhaus-aussen.jpg',
-            '/germany/leipzig/uni-riese-stadtbild.jpg'
+            '/germany/leipzig/city-hochhaus-exterior1.jpg',
+            '/germany/leipzig/city-hochhaus-exterior2.jpg'
         ],
         interior: [
-            '/germany/leipzig/city-hochhaus-lobby.jpg',
-            '/germany/leipzig/uni-riese-innen.jpg'
+            '/germany/leipzig/city-hochhaus-interior1.jpg',
+            '/germany/leipzig/city-hochhaus-interior2.jpg'
         ],
-        panorama: {
-            nord: '/germany/leipzig/panorama-nord.jpg',
-            ost: '/germany/leipzig/panorama-ost.jpg',
-            sued: '/germany/leipzig/panorama-sued.jpg',
-            west: '/germany/leipzig/panorama-west.jpg'
-        }
-    };
-
-    const panoramaDirections = {
-        nord: { 
-            name: 'Nord', 
-            icon: '🧭', 
-            landmarks: ['Leipziger Messe', 'Flughafen Leipzig/Halle', 'Neue Messe', 'Porsche-Werk'],
-            fallback: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&auto=format'
-        },
-        ost: { 
-            name: 'Ost', 
-            icon: '🌅', 
-            landmarks: ['Völkerschlachtdenkmal', 'Cospudener See', 'Südfriedhof', 'Monument der Schlacht'],
-            fallback: 'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=800&h=500&fit=crop&auto=format'
-        },
-        sued: { 
-            name: 'Süd', 
-            icon: '🌳', 
-            landmarks: ['Clara-Zetkin-Park', 'Auwald', 'Cospudener See', 'Kulkwitzer See'],
-            fallback: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop&auto=format'
-        },
-        west: { 
-            name: 'West', 
-            icon: '🏛️', 
-            landmarks: ['Innenstadt', 'Thomaskirche', 'Gewandhaus', 'Altes Rathaus', 'Nikolaikirche'],
-            fallback: 'https://images.unsplash.com/photo-1520637836862-4d197d17c27a?w=800&h=500&fit=crop&auto=format'
-        }
+        panorama: [
+            '/germany/leipzig/city-hochhaus-panorama1.jpg'
+        ]
     };
 
     const renderContent = () => {
@@ -65,9 +34,9 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
                             <div>
                                 <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Das City-Hochhaus, auch bekannt als "Uni-Riese", ist mit 142 Metern das höchste Gebäude 
+                                    Das City-Hochhaus, liebevoll "Uni-Riese" genannt, ist mit 142 Metern das höchste Gebäude 
                                     Leipzigs und ein markantes Wahrzeichen der Stadt. Von 1968 bis 1972 erbaut, beherbergt es 
-                                    heute die Universität Leipzig und bietet eine spektakuläre Aussicht über die Stadt.
+                                    heute die Universität Leipzig und bietet eine atemberaubende Aussicht über Leipzig.
                                 </p>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                     <div>
@@ -75,24 +44,24 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                         <p>Augustusplatz 9<br/>04109 Leipzig</p>
                                     </div>
                                     <div>
-                                        <h4>🏢 Daten</h4>
-                                        <p>Höhe: 142,5m<br/>36 Stockwerke</p>
+                                        <h4>🕒 Öffnungszeiten</h4>
+                                        <p>Mo-Fr: 06:00 - 22:00 Uhr<br/>Sa-So: 08:00 - 20:00 Uhr</p>
                                     </div>
                                 </div>
                                 <div>
                                     <h4>🎯 Highlights</h4>
                                     <ul style={{ columns: 2, columnGap: '2rem' }}>
-                                        <li>Höchstes Gebäude Leipzigs</li>
-                                        <li>Panorama-Restaurant im 29. Stock</li>
+                                        <li>142m hohe Aussichtsplattform</li>
+                                        <li>Panorama-Restaurant (29. Stock)</li>
+                                        <li>360° Stadtblick über Leipzig</li>
                                         <li>Universität Leipzig</li>
-                                        <li>360° Stadtblick</li>
-                                        <li>DDR-Architektur</li>
+                                        <li>DDR-Architektur-Ikone</li>
                                         <li>Augustusplatz-Lage</li>
                                     </ul>
                                 </div>
                             </div>
                             <img 
-                                src="/germany/leipzig/city-hochhaus-aussen.jpg" 
+                                src="/germany/leipzig/city-hochhaus.jpg" 
                                 alt="City-Hochhaus Leipzig" 
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
@@ -106,7 +75,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
             case 'exterior':
                 return (
                     <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>Außenansicht des City-Hochhauses</h3>
+                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🏢 Außenansicht & Architektur</h3>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.exterior.map((img, index) => (
                                 <div key={index} style={{ position: 'relative' }}>
@@ -123,12 +92,29 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         </div>
                         <div>
                             <h4>🏗️ Architektonische Besonderheiten</h4>
-                            <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+                            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                                 Das City-Hochhaus ist ein herausragendes Beispiel der DDR-Architektur der späten 1960er Jahre. 
                                 Mit seiner charakteristischen Fassade und der imposanten Höhe prägt es seit über 50 Jahren 
-                                die Skyline Leipzigs. Das Gebäude steht symbolisch für den Aufbruch der Universität Leipzig 
-                                in die Moderne.
+                                die Skyline Leipzigs.
                             </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
+                                <div>
+                                    <ul>
+                                        <li><strong>Baujahr:</strong> 1968-1972</li>
+                                        <li><strong>Architekt:</strong> Hermann Henselmann</li>
+                                        <li><strong>Stil:</strong> DDR-Moderne</li>
+                                        <li><strong>Besonderheit:</strong> Höchstes Hochhaus Ostdeutschlands</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li><strong>Material:</strong> Stahlbeton</li>
+                                        <li><strong>Fassade:</strong> Aluminiumverkleidung</li>
+                                        <li><strong>Fenster:</strong> 2.800 Einzelfenster</li>
+                                        <li><strong>Aufzüge:</strong> 8 Hochgeschwindigkeitsaufzüge</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );
@@ -136,7 +122,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
             case 'interior':
                 return (
                     <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>Innenräume des City-Hochhauses</h3>
+                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🏢 Innenbereich & Ausstattung</h3>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
@@ -151,220 +137,173 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                 </div>
                             ))}
                         </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                            <div>
-                                <h4>🏛️ Universitätsbereiche</h4>
-                                <p>Moderne Hörsäle, Seminarräume und Verwaltung der Universität Leipzig.</p>
+                        <div style={{ 
+                            display: 'grid', 
+                            gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            gap: '2rem',
+                            marginBottom: '2rem'
+                        }}>
+                            <div style={{
+                                background: 'white',
+                                padding: '1.5rem',
+                                borderRadius: '12px',
+                                boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                                border: '2px solid #E5E7EB'
+                            }}>
+                                <h4 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🎓 Universität Leipzig</h4>
+                                <ul style={{ fontSize: '0.95rem', lineHeight: 1.6 }}>
+                                    <li>Moderne Hörsäle (bis 400 Plätze)</li>
+                                    <li>Seminarräume & Gruppenarbeitsplätze</li>
+                                    <li>Universitätsverwaltung</li>
+                                    <li>Professorenbüros</li>
+                                    <li>Studierendensekretariat</li>
+                                    <li>Bibliothek & Lernbereiche</li>
+                                </ul>
                             </div>
-                            <div>
-                                <h4>🍽️ Restaurant & Café</h4>
-                                <p>Panorama-Restaurant mit spektakulärer Aussicht im 29. Stockwerk.</p>
+                            <div style={{
+                                background: 'white',
+                                padding: '1.5rem',
+                                borderRadius: '12px',
+                                boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                                border: '2px solid #E5E7EB'
+                            }}>
+                                <h4 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🍽️ Panorama Restaurant</h4>
+                                <ul style={{ fontSize: '0.95rem', lineHeight: 1.6 }}>
+                                    <li>29. Stockwerk - 120m Höhe</li>
+                                    <li>360° Rundumblick über Leipzig</li>
+                                    <li>Gehobene deutsche Küche</li>
+                                    <li>Internationale Spezialitäten</li>
+                                    <li>Eventlocation für Feiern</li>
+                                    <li>Reservierung empfohlen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style={{
+                            background: '#f8fafc',
+                            padding: '1.5rem',
+                            borderRadius: '10px',
+                            border: '1px solid #e5e7eb'
+                        }}>
+                            <h4 style={{ color: '#374151', marginBottom: '1rem' }}>ℹ️ Besucherinfo</h4>
+                            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1rem' }}>
+                                Das City-Hochhaus ist als Universitätsgebäude grundsätzlich öffentlich zugänglich. 
+                                Das Panorama-Restaurant im 29. Stock bietet die beste Aussichtsmöglichkeit für Touristen.
+                            </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '1rem' }}>
+                                <div>
+                                    <strong>🕒 Öffnungszeiten Restaurant:</strong><br/>
+                                    Mo-Sa: 11:30-22:00 Uhr<br/>
+                                    So: 11:30-21:00 Uhr
+                                </div>
+                                <div>
+                                    <strong>📞 Reservierung:</strong><br/>
+                                    Tel: +49 341 710-0<br/>
+                                    restaurant@city-hochhaus.de
+                                </div>
                             </div>
                         </div>
                     </div>
                 );
 
             case 'panorama':
-                const currentDirection = panoramaDirections[panoramaDirection];
                 return (
                     <div>
-                        <h3 style={{ color: '#3b82f6', marginBottom: '1rem' }}>
-                            🌆 360° Panorama-Rundblick vom City-Hochhaus
+                        <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
+                            🌆 Panorama-Aussichten
                         </h3>
-                        
-                        {/* Direction Navigation */}
-                        <div style={{ 
-                            display: 'flex', 
-                            justifyContent: 'center', 
-                            gap: '0.5rem', 
-                            marginBottom: '1.5rem',
-                            flexWrap: 'wrap'
-                        }}>
-                            {Object.entries(panoramaDirections).map(([key, direction]) => (
-                                <button
-                                    key={key}
-                                    onClick={() => setPanoramaDirection(key as 'nord' | 'ost' | 'sued' | 'west')}
-                                    style={{
-                                        padding: '0.7rem 1.2rem',
-                                        border: 'none',
-                                        borderRadius: '25px',
-                                        background: panoramaDirection === key ? '#3b82f6' : '#f1f5f9',
-                                        color: panoramaDirection === key ? 'white' : '#64748b',
-                                        fontWeight: panoramaDirection === key ? 'bold' : 'normal',
-                                        cursor: 'pointer',
-                                        fontSize: '0.9rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '0.5rem',
-                                        transition: 'all 0.3s ease',
-                                        boxShadow: panoramaDirection === key ? '0 4px 12px rgba(59, 130, 246, 0.3)' : 'none'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        if (panoramaDirection !== key) {
-                                            e.currentTarget.style.background = '#e2e8f0';
-                                        }
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        if (panoramaDirection !== key) {
-                                            e.currentTarget.style.background = '#f1f5f9';
-                                        }
-                                    }}
-                                >
-                                    <span>{direction.icon}</span>
-                                    <span>{direction.name}</span>
-                                </button>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                            {images.panorama.map((img, index) => (
+                                <div key={index}>
+                                    <img 
+                                        src={img}
+                                        alt={`City-Hochhaus Panorama ${index + 1}`}
+                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                                        onError={(e) => {
+                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1590650619471 + index * 3000}?w=400&h=300&fit=crop`;
+                                        }}
+                                    />
+                                </div>
                             ))}
                         </div>
-
-                        {/* Current Panorama View */}
                         <div style={{ 
-                            position: 'relative', 
-                            marginBottom: '2rem',
-                            borderRadius: '12px',
-                            overflow: 'hidden',
-                            boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                            display: 'grid', 
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                            gap: '2rem', 
+                            marginBottom: '3rem' 
                         }}>
-                            <img 
-                                src={images.panorama[panoramaDirection]}
-                                alt={`Leipzig Panorama Richtung ${currentDirection.name}`}
-                                style={{ 
-                                    width: '100%', 
-                                    height: '300px', 
-                                    objectFit: 'cover',
-                                    transition: 'all 0.5s ease'
-                                }}
-                                onError={(e) => {
-                                    e.currentTarget.src = currentDirection.fallback;
-                                }}
-                            />
-                            
-                            {/* Direction Overlay */}
                             <div style={{
-                                position: 'absolute',
-                                top: '1rem',
-                                left: '1rem',
-                                background: 'rgba(0,0,0,0.7)',
+                                background: 'linear-gradient(135deg, #3B82F6, #1E40AF)',
                                 color: 'white',
-                                padding: '0.5rem 1rem',
-                                borderRadius: '20px',
-                                fontSize: '1rem',
-                                fontWeight: 'bold',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.5rem'
+                                padding: '2rem',
+                                borderRadius: '15px',
+                                textAlign: 'center'
                             }}>
-                                <span>{currentDirection.icon}</span>
-                                <span>Blickrichtung {currentDirection.name}</span>
+                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🧭</div>
+                                <h4 style={{ color: 'white', marginBottom: '1rem' }}>Norden</h4>
+                                <p>Leipziger Messe, Flughafen Leipzig/Halle, Neue Messe, Porsche-Werk</p>
                             </div>
 
-                            {/* Navigation Arrows */}
-                            <button
-                                onClick={() => {
-                                    const directions = ['nord', 'ost', 'sued', 'west'] as const;
-                                    const currentIndex = directions.indexOf(panoramaDirection);
-                                    const prevIndex = currentIndex === 0 ? directions.length - 1 : currentIndex - 1;
-                                    setPanoramaDirection(directions[prevIndex]);
-                                }}
-                                style={{
-                                    position: 'absolute',
-                                    left: '1rem',
-                                    top: '50%',
-                                    transform: 'translateY(-50%)',
-                                    background: 'rgba(255,255,255,0.9)',
-                                    border: 'none',
-                                    borderRadius: '50%',
-                                    width: '40px',
-                                    height: '40px',
-                                    cursor: 'pointer',
-                                    fontSize: '1.2rem',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
-                                }}
-                            >
-                                ←
-                            </button>
-                            
-                            <button
-                                onClick={() => {
-                                    const directions = ['nord', 'ost', 'sued', 'west'] as const;
-                                    const currentIndex = directions.indexOf(panoramaDirection);
-                                    const nextIndex = currentIndex === directions.length - 1 ? 0 : currentIndex + 1;
-                                    setPanoramaDirection(directions[nextIndex]);
-                                }}
-                                style={{
-                                    position: 'absolute',
-                                    right: '1rem',
-                                    top: '50%',
-                                    transform: 'translateY(-50%)',
-                                    background: 'rgba(255,255,255,0.9)',
-                                    border: 'none',
-                                    borderRadius: '50%',
-                                    width: '40px',
-                                    height: '40px',
-                                    cursor: 'pointer',
-                                    fontSize: '1.2rem',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
-                                }}
-                            >
-                                →
-                            </button>
-                        </div>
-
-                        {/* Landmarks Info */}
-                        <div style={{ 
-                            background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-                            padding: '1.5rem',
-                            borderRadius: '12px',
-                            border: '1px solid #cbd5e1'
-                        }}>
-                            <h4 style={{ 
-                                color: '#3b82f6', 
-                                marginBottom: '1rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.5rem'
+                            <div style={{
+                                background: 'linear-gradient(135deg, #059669, #047857)',
+                                color: 'white',
+                                padding: '2rem',
+                                borderRadius: '15px',
+                                textAlign: 'center'
                             }}>
-                                <span>{currentDirection.icon}</span>
-                                Sichtbare Landmarks - Richtung {currentDirection.name}
+                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌅</div>
+                                <h4 style={{ color: 'white', marginBottom: '1rem' }}>Osten</h4>
+                                <p>Völkerschlachtdenkmal, Cospudener See, Südfriedhof, Monument der Schlacht</p>
+                            </div>
+
+                            <div style={{
+                                background: 'linear-gradient(135deg, #DC2626, #991B1B)',
+                                color: 'white',
+                                padding: '2rem',
+                                borderRadius: '15px',
+                                textAlign: 'center'
+                            }}>
+                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌳</div>
+                                <h4 style={{ color: 'white', marginBottom: '1rem' }}>Süden</h4>
+                                <p>Clara-Zetkin-Park, Auwald, Cospudener See, Kulkwitzer See</p>
+                            </div>
+
+                            <div style={{
+                                background: 'linear-gradient(135deg, #B45309, #92400E)',
+                                color: 'white',
+                                padding: '2rem',
+                                borderRadius: '15px',
+                                textAlign: 'center'
+                            }}>
+                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏛️</div>
+                                <h4 style={{ color: 'white', marginBottom: '1rem' }}>Westen</h4>
+                                <p>Innenstadt, Thomaskirche, Gewandhaus, Altes Rathaus, Nikolaikirche</p>
+                            </div>
+                        </div>
+                        <div style={{
+                            background: '#f8fafc',
+                            padding: '2rem',
+                            borderRadius: '15px',
+                            border: '1px solid #e5e7eb'
+                        }}>
+                            <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
+                                🌟 Besondere Aussichtspunkte
                             </h4>
                             <div style={{ 
                                 display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? 'repeat(2, 1fr)' : '1fr', 
-                                gap: '0.8rem'
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                                gap: '1.5rem'
                             }}>
-                                {currentDirection.landmarks.map((landmark, index) => (
-                                    <div 
-                                        key={index}
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '0.5rem',
-                                            padding: '0.5rem',
-                                            background: 'rgba(255,255,255,0.7)',
-                                            borderRadius: '8px',
-                                            fontSize: '0.95rem'
-                                        }}
-                                    >
-                                        <span style={{ color: '#3b82f6' }}>📍</span>
-                                        <span style={{ fontWeight: '500' }}>{landmark}</span>
-                                    </div>
-                                ))}
+                                <div style={{ textAlign: 'center' }}>
+                                    <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🍽️</div>
+                                    <h5>Panorama Restaurant (29. Stock)</h5>
+                                    <p>Rundumblick bei Speis und Trank</p>
+                                </div>
+                                <div style={{ textAlign: 'center' }}>
+                                    <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📐</div>
+                                    <h5>Aussichtsterrasse (31. Stock)</h5>
+                                    <p>Höchste öffentlich zugängliche Ebene</p>
+                                </div>
                             </div>
-                        </div>
-
-                        {/* 360° Info */}
-                        <div style={{ 
-                            marginTop: '1.5rem',
-                            textAlign: 'center',
-                            fontSize: '0.9rem',
-                            color: '#64748b'
-                        }}>
-                            💡 <strong>Tipp:</strong> Nutzen Sie die Pfeiltasten oder klicken Sie die Richtungen, um den kompletten 360°-Rundblick zu erleben!
                         </div>
                     </div>
                 );
@@ -442,6 +381,105 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                     </div>
                 );
 
+            case 'preise':
+                return (
+                    <div>
+                        <h3 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>💰 Eintrittspreise & Informationen</h3>
+                        
+                        <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
+                            <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '2px solid #e2e8f0' }}>
+                                <h4 style={{ color: '#0ea5e9', marginBottom: '1.5rem' }}>🎓 Universitätsbereiche</h4>
+                                <div style={{ fontSize: '1.1rem' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>Studenten (mit Ausweis)</span>
+                                        <strong>Kostenfrei</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>Universitätsmitarbeiter</span>
+                                        <strong>Kostenfrei</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>Besucher/Führungen</span>
+                                        <strong>5,00 €</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <span>Gruppen ab 10 Personen</span>
+                                        <strong>3,00 €</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style={{ background: '#FEF3C7', padding: '2rem', borderRadius: '12px', border: '2px solid #F59E0B' }}>
+                                <h4 style={{ color: '#D97706', marginBottom: '1.5rem' }}>🍽️ Panorama Restaurant</h4>
+                                <div style={{ fontSize: '1.1rem' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>Nur Getränke</span>
+                                        <strong>Kostenfrei</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>Mittagsmenü</span>
+                                        <strong>12,50 - 18,50 €</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                        <span>À la Carte Hauptgericht</span>
+                                        <strong>15,00 - 28,00 €</strong>
+                                    </div>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <span>Tischreservierung</span>
+                                        <strong>Empfohlen</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{ background: '#ECFDF5', padding: '2rem', borderRadius: '12px', border: '2px solid #10B981', marginBottom: '2rem' }}>
+                            <h4 style={{ color: '#047857', marginBottom: '1.5rem' }}>🕒 Öffnungszeiten & Führungen</h4>
+                            <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr 1fr' : '1fr', gap: '1rem', fontSize: '1.1rem' }}>
+                                <div>
+                                    <div><strong>Universitätsbereiche:</strong></div>
+                                    <div>Mo-Fr: 06:00-22:00<br/>Sa-So: 08:00-20:00</div>
+                                </div>
+                                <div>
+                                    <div><strong>Panorama Restaurant:</strong></div>
+                                    <div>Mo-Sa: 11:30-22:00<br/>So: 11:30-21:00</div>
+                                </div>
+                                <div>
+                                    <div><strong>Öffentliche Führungen:</strong></div>
+                                    <div>Sa: 14:00 & 16:00<br/>So: 11:00 & 14:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{ background: '#F3E8FF', padding: '2rem', borderRadius: '12px', border: '2px solid #8B5CF6', marginBottom: '1.5rem' }}>
+                            <h4 style={{ color: '#6D28D9', marginBottom: '1.5rem' }}>🚇 Anfahrt & Parken</h4>
+                            <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem' }}>
+                                <div>
+                                    <h5>🚊 Öffentliche Verkehrsmittel:</h5>
+                                    <ul>
+                                        <li><strong>Straßenbahn:</strong> Linien 4, 7, 12, 15 → Augustusplatz</li>
+                                        <li><strong>S-Bahn:</strong> S1-S5 → Hauptbahnhof (5 Min. Fußweg)</li>
+                                        <li><strong>Bus:</strong> Linien 89, 265 → Augustusplatz</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>🚗 Parkmöglichkeiten:</h5>
+                                    <ul>
+                                        <li><strong>Tiefgarage Augustusplatz:</strong> 2,50€/Std.</li>
+                                        <li><strong>Parkhaus Hauptbahnhof:</strong> 2,00€/Std.</li>
+                                        <li><strong>Straßenparkplätze:</strong> Begrenzt verfügbar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{ fontSize: '0.9rem', color: '#6b7280' }}>
+                            <p><strong>📞 Kontakt & Reservierung:</strong> Restaurant: +49 341 710-0 | Führungen: +49 341 97-30000</p>
+                            <p><strong>♿ Barrierefreiheit:</strong> Vollständig rollstuhlgerecht mit Aufzügen und behindertengerechten Toiletten</p>
+                            <p><strong>🔒 Sicherheitshinweis:</strong> Ausweispflicht für Besucher, Universitätsausweis für Studenten erforderlich</p>
+                        </div>
+                    </div>
+                );
+
             default:
                 return null;
         }
@@ -510,14 +548,14 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                 }}>
                     {[
                         { key: 'overview', label: '📋 Übersicht' },
-                        { key: 'exterior', label: '🏢 Außen' },
-                        { key: 'interior', label: '🏛️ Innen' },
+                        { key: 'exterior', label: '🏛️ Außen' },
+                        { key: 'interior', label: '🎭 Innen' },
                         { key: 'panorama', label: '🌆 Panorama' },
-                        { key: 'info', label: 'ℹ️ Info' }
+                        { key: 'preise', label: '💰 Preise' }
                     ].map(tab => (
                         <button
                             key={tab.key}
-                            onClick={() => setActiveTab(tab.key as 'overview' | 'exterior' | 'interior' | 'panorama' | 'info')}
+                            onClick={() => setActiveTab(tab.key as 'overview' | 'exterior' | 'interior' | 'panorama' | 'preise')}
                             style={{
                                 flex: 1,
                                 padding: '1rem',
