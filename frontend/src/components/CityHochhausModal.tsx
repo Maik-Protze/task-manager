@@ -7,18 +7,16 @@ interface CityHochhausModalProps {
 }
 
 const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }) => {
-    const [activeTab, setActiveTab] = useState<'overview' | 'exterior' | 'interior' | 'panorama' | 'preise'>('overview');
+    const [activeTab, setActiveTab] = useState<'overview' | 'exterior' | 'interior' | 'panorama' | 'info' | 'preise'>('overview');
 
     if (!isOpen) return null;
 
     const images = {
         exterior: [
-            '/germany/leipzig/city-hochhaus-exterior1.jpg',
-            '/germany/leipzig/city-hochhaus-exterior2.jpg'
+            '/germany/leipzig/uni-rieser.jpg'
         ],
         interior: [
-            '/germany/leipzig/city-hochhaus-interior1.jpg',
-            '/germany/leipzig/city-hochhaus-interior2.jpg'
+            '/germany/leipzig/restaurant-uni-riese.jpg'
         ],
         panorama: [
             '/germany/leipzig/city-hochhaus-panorama1.jpg'
@@ -61,11 +59,11 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                 </div>
                             </div>
                             <img 
-                                src="/germany/leipzig/city-hochhaus.jpg" 
+                                src="/germany/leipzig/uni-riese-stadtbild.jpg" 
                                 alt="City-Hochhaus Leipzig" 
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
-                                    e.currentTarget.src = "/germany/leipzig/uni-riese-stadtbild.jpg";
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=400&fit=crop";
                                 }}
                             />
                         </div>
@@ -76,13 +74,13 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🏢 Außenansicht & Architektur</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
                             {images.exterior.map((img, index) => (
-                                <div key={index} style={{ position: 'relative' }}>
+                                <div key={index} style={{ position: 'relative', maxWidth: '400px', width: '100%' }}>
                                     <img 
                                         src={img}
                                         alt={`City-Hochhaus Außen ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                                        style={{ width: '100%', height: '500px', objectFit: 'contain', borderRadius: '8px', backgroundColor: '#f8f9fa' }}
                                         onError={(e) => {
                                             e.currentTarget.src = `https://images.unsplash.com/photo-${1449824913935 + index * 1000}?w=400&h=300&fit=crop`;
                                         }}
@@ -555,7 +553,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                     ].map(tab => (
                         <button
                             key={tab.key}
-                            onClick={() => setActiveTab(tab.key as 'overview' | 'exterior' | 'interior' | 'panorama' | 'preise')}
+                            onClick={() => setActiveTab(tab.key as 'overview' | 'exterior' | 'interior' | 'panorama' | 'info' | 'preise')}
                             style={{
                                 flex: 1,
                                 padding: '1rem',

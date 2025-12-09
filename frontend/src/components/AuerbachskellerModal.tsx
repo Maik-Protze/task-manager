@@ -21,6 +21,7 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
             '/germany/leipzig/auerbachs-keller-historische-raeume.jpg'
         ],
         restaurant: [
+            '/germany/leipzig/auerbachs-keller.jpg',
             '/germany/leipzig/auerbachs-keller-restaurant.jpg',
             '/germany/leipzig/auerbachs-keller-speisesaal.jpg'
         ]
@@ -62,11 +63,11 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                                 </div>
                             </div>
                             <img 
-                                src="/germany/leipzig/auerbachs-keller-historisch.jpg" 
+                                src="/germany/leipzig/auerbachskeller.jpg" 
                                 alt="Auerbachs Keller" 
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
-                                    e.currentTarget.src = "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=300&h=400&fit=crop";
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1551632436-cbfa8dd35adfa?w=300&h=400&fit=crop";
                                 }}
                             />
                         </div>

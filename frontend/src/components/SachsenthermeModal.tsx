@@ -14,14 +14,17 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
     const images = {
         thermal: [
             '/germany/leipzig/sachsentherme-thermal.jpg',
-            '/germany/leipzig/sachsentherme-pool.jpg'
+            '/germany/leipzig/sachsentherme-pool.jpg',
+            '/germany/leipzig/Sachsentherme1.jpg'
         ],
         wellness: [
             '/germany/leipzig/sachsentherme-wellness.jpg',
-            '/germany/leipzig/sachsentherme-spa.jpg'
+            '/germany/leipzig/sachsentherme-spa.jpg',
+            '/germany/leipzig/sachsentherme-außen.jpg'
         ],
         sauna: [
-            '/germany/leipzig/sachsentherme-sauna.jpg'
+            '/germany/leipzig/sachsentherme-sauna.jpg',
+            '/germany/leipzig/sachsentherme-thermal.jpg'
         ]
     };
 
@@ -61,11 +64,11 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                                 </div>
                             </div>
                             <img 
-                                src="/germany/leipzig/sachsentherme.jpg" 
+                                src="/germany/leipzig/Sachsentherme1.jpg" 
                                 alt="Sachsentherme Leipzig" 
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
-                                    e.currentTarget.src = "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&h=400&fit=crop";
+                                    e.currentTarget.src = "/germany/leipzig/sachsentherme-wellness.jpg";
                                 }}
                             />
                         </div>

@@ -17,6 +17,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
             '/germany/leipzig/nikolaikirche-turm.jpg'
         ],
         interior: [
+            '/germany/leipzig/nikolaikirche-innenansicht.jpg',
             '/germany/leipzig/nikolaikirche-innen.jpg',
             '/germany/leipzig/nikolaikirche-saeulen.jpg'
         ],

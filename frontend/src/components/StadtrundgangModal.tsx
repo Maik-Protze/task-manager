@@ -62,9 +62,9 @@ const StadtrundgangModal: React.FC<StadtrundgangModalProps> = ({ isOpen, onClose
                                 </div>
                             </div>
                             <img 
-                                src="/germany/leipzig/stadtrundgang.jpg" 
-                                alt="Stadtrundgang Leipzig" 
-                                style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
+                                src="/germany/leipzig/stadtrundgang-karte.png" 
+                                alt="Leipzig Stadtrundgänge Karte - Übersicht aller Touren" 
+                                style={{ width: '100%', height: '400px', objectFit: 'contain', borderRadius: '8px' }}
                                 onError={(e) => {
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=400&fit=crop";
                                 }}
