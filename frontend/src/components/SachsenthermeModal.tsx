@@ -37,18 +37,18 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
                             <div>
                                 <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Die Sachsentherme ist Leipzigs premium Wellness-Oase mit Thermalbädern, 
-                                    Saunalandschaft und modernen Spa-Angeboten. Entspannen Sie in wohltuenden 
+                                    Die Sachsentherme ist Leipzigs premium Wellness-Oase mit Thermalbädern,
+                                    Saunalandschaft und modernen Spa-Angeboten. Entspannen Sie in wohltuenden
                                     Thermalsolen und genießen Sie erstklassige Wellness-Behandlungen.
                                 </p>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                     <div>
                                         <h4>📍 Standort</h4>
-                                        <p>Schongauer Str. 9<br/>04328 Leipzig</p>
+                                        <p>Schongauer Str. 9<br />04328 Leipzig</p>
                                     </div>
                                     <div>
                                         <h4>🕒 Öffnungszeiten</h4>
-                                        <p>Täglich 09:00 - 23:00 Uhr<br/>Sauna bis 24:00 Uhr</p>
+                                        <p>Täglich 09:00 - 23:00 Uhr<br />Sauna bis 24:00 Uhr</p>
                                     </div>
                                 </div>
                                 <div>
@@ -63,9 +63,9 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                                     </ul>
                                 </div>
                             </div>
-                            <img 
-                                src="/germany/leipzig/Sachsentherme1.jpg" 
-                                alt="Sachsentherme Leipzig" 
+                            <img
+                                src="/germany/leipzig/Sachsentherme1.jpg"
+                                alt="Sachsentherme Leipzig"
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
                                     e.currentTarget.src = "/germany/leipzig/sachsentherme-wellness.jpg";
@@ -78,118 +78,16 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
             case 'thermal':
                 return (
                     <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>♨️ Thermalbad-Bereiche</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-                            {images.thermal.map((img, index) => (
-                                <div key={index} style={{ position: 'relative' }}>
-                                    <img 
-                                        src={img}
-                                        alt={`Sachsentherme Thermal ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                                        onError={(e) => {
-                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1571902943202 + index}?w=400&h=300&fit=crop`;
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <div>
-                            <h4>♨️ Thermalsole-Becken</h4>
-                            <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                                Entspannen Sie in unseren wohltuenden Thermalsole-Becken bei 34°C. 
-                                Die heilsamen Mineralien wirken entspannend auf Haut und Gelenke und 
-                                fördern die Durchblutung. Perfekt für Erholung und Regeneration.
-                            </p>
-                        </div>
-                    </div>
-                );
-
-            case 'wellness':
-                return (
-                    <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>💆‍♀️ Wellness & Spa</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-                            {images.wellness.map((img, index) => (
-                                <div key={index}>
-                                    <img 
-                                        src={img}
-                                        alt={`Sachsentherme Wellness ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                                        onError={(e) => {
-                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1580285830000 + index * 1000}?w=400&h=300&fit=crop`;
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                            <div>
-                                <h4>💆‍♀️ Massage-Angebote</h4>
-                                <p>Klassische Massagen, Hot Stone und Aromatherapie für tiefe Entspannung.</p>
-                            </div>
-                            <div>
-                                <h4>✨ Gesichtsbehandlungen</h4>
-                                <p>Anti-Aging Facials und Hautpflege mit hochwertigen Produkten.</p>
-                            </div>
-                        </div>
-                    </div>
-                );
-
-            case 'sauna':
-                return (
-                    <div>
-                        <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🔥 Saunalandschaft</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-                            {images.sauna.map((img, index) => (
-                                <div key={index}>
-                                    <img 
-                                        src={img}
-                                        alt={`Sachsentherme Sauna ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
-                                        onError={(e) => {
-                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1581579198000 + index * 2000}?w=400&h=300&fit=crop`;
-                                        }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <div>
-                            <h4>🔥 Sauna-Bereiche</h4>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
-                                <div>
-                                    <ul>
-                                        <li><strong>Finnische Sauna:</strong> 90°C trockene Hitze</li>
-                                        <li><strong>Aroma-Dampfbad:</strong> 65°C mit Duftessenzen</li>
-                                        <li><strong>Salz-Kristall-Sauna:</strong> 75°C mit Himalaya-Salz</li>
-                                        <li><strong>Kältegrotte:</strong> 12°C Abkühlung</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li><strong>Aufgüsse:</strong> Täglich verschiedene Düfte</li>
-                                        <li><strong>Ruheräume:</strong> Entspannung zwischen Saunagängen</li>
-                                        <li><strong>Außenterrasse:</strong> Frischluft-Bereich</li>
-                                        <li><strong>Eisgrotte:</strong> Extreme Abkühlung</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                );
-
-            case 'thermal':
-                return (
-                    <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             ♨️ Thermalbad-Erlebnis
                         </h3>
-                        
+
                         {/* Thermalbecken Übersicht */}
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #3B82F6, #1E40AF)',
@@ -232,7 +130,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         </div>
 
                         {/* Gesundheitliche Vorteile */}
-                        <div style={{ 
+                        <div style={{
                             background: '#f8fafc',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -241,9 +139,9 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.3rem' }}>
                                 🌿 Gesundheitliche Vorteile der Thermalsole
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                                 gap: '1.5rem'
                             }}>
                                 <div style={{ textAlign: 'center' }}>
@@ -277,13 +175,13 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             💆‍♀️ Wellness & Spa-Behandlungen
                         </h3>
-                        
+
                         {/* Behandlungsarten */}
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '1.5rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '1.5rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'white',
@@ -338,7 +236,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         </div>
 
                         {/* Wellness-Pakete */}
-                        <div style={{ 
+                        <div style={{
                             background: 'linear-gradient(135deg, #F3F4F6, #E5E7EB)',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -347,9 +245,9 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 🎁 Premium Wellness-Pakete
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '2rem'
                             }}>
                                 <div style={{
@@ -360,7 +258,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                                 }}>
                                     <h5 style={{ color: '#0EA5E9', marginBottom: '1rem' }}>💎 VIP Wellness Day</h5>
                                     <p style={{ fontSize: '0.95rem', marginBottom: '1rem' }}>
-                                        Ganzkörper-Massage + Gesichtsbehandlung + 
+                                        Ganzkörper-Massage + Gesichtsbehandlung +
                                         Thermalbad + Sauna + Lunch
                                     </p>
                                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#0EA5E9' }}>
@@ -376,7 +274,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                                 }}>
                                     <h5 style={{ color: '#10996B', marginBottom: '1rem' }}>💕 Romantik Paket</h5>
                                     <p style={{ fontSize: '0.95rem', marginBottom: '1rem' }}>
-                                        Paarbehandlung + Private Sauna + 
+                                        Paarbehandlung + Private Sauna +
                                         Champagner + 3-Gänge Dinner
                                     </p>
                                     <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#10996B' }}>
@@ -394,13 +292,13 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             🔥 Saunalandschaft
                         </h3>
-                        
+
                         {/* Sauna-Bereiche */}
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #DC2626, #991B1B)',
@@ -468,7 +366,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                         </div>
 
                         {/* Sauna-Etiquette */}
-                        <div style={{ 
+                        <div style={{
                             background: '#FEF3C7',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -477,9 +375,9 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#92400E', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 📋 Sauna-Etiquette & Tipps
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '1.5rem',
                                 fontSize: '0.95rem'
                             }}>
@@ -512,7 +410,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>💰 Eintrittspreise & Angebote</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1.5rem' }}>🏊‍♀️ Thermalbad</h4>
@@ -613,7 +511,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
     };
 
     return (
-        <div 
+        <div
             style={{
                 position: 'fixed',
                 top: 0,
@@ -629,7 +527,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
             }}
             onClick={onClose}
         >
-            <div 
+            <div
                 style={{
                     backgroundColor: 'white',
                     borderRadius: '12px',

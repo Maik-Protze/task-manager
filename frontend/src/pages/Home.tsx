@@ -58,7 +58,7 @@ export default function Home() {
           <div className="grid grid-3">
             <div className="text-center">
               <div style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>🌍</div>
-              <h3>Weltweite Destinationen</h3>
+              <h3>Traumhafte Reiseziele</h3>
               <p>Entdecken Sie über 100 Reiseziele auf der ganzen Welt</p>
             </div>
             <div className="text-center">

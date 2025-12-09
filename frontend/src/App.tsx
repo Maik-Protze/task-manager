@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
-import Destinations from './pages/Destinations'
+
 import TourDetails from './pages/TourDetails'
 import Tours from './pages/Tours'
 import SummerPrograms from './pages/SummerPrograms'
@@ -124,23 +124,7 @@ export default function App() {
                   <span style={{ fontSize: '1.25rem' }}>☀️</span>
                   <span>Sommer</span>
                 </Link>
-                <Link
-                  to="/destinations"
-                  className="nav-link-modern"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '0.75rem 1.25rem',
-                    color: 'white',
-                    fontWeight: 500,
-                    borderRadius: 'var(--radius-lg)',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  <span style={{ fontSize: '1.25rem' }}>🌍</span>
-                  <span>Destinationen</span>
-                </Link>
+
                 <Link
                   to="/blog"
                   className="nav-link-modern"
@@ -228,9 +212,7 @@ export default function App() {
                 <Link to="/summer-programs" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
                   <span>☀️</span> Sommerprogramme
                 </Link>
-                <Link to="/destinations" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
-                  <span>🌍</span> Destinationen
-                </Link>
+
                 <Link to="/blog" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
                   <span>📰</span> Blog
                 </Link>
@@ -257,7 +239,7 @@ export default function App() {
             <Route path="/tours/:id" element={<TourDetails />} />
             <Route path="/summer-programs" element={<SummerPrograms />} />
             <Route path="/summer-programs/:tourId" element={<SummerTourDetails />} />
-            <Route path="/destinations" element={<Destinations />} />
+
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
