@@ -113,8 +113,16 @@ export default function Impressum() {
 
                     <h2>Bildnachweise</h2>
                     <p>
-                        Sämtliche verwendeten Bilder stammen von Unsplash.com oder von lizenzierten Bildagenturen.
-                        Die Nutzungsrechte liegen bei TravelDreams GmbH bzw. den jeweiligen Fotografen.
+                        Die verwendeten Bilder stammen aus folgenden Quellen:
+                    </p>
+                    <ul style={{ marginLeft: '1.5rem', marginBottom: '1rem' }}>
+                        <li><strong>Eigene Fotografien:</strong> thomaskirche-innenraum-leipzig.jpg, ruhmeshalle-voelkerschlachtdenkmal-leipzig.jpg, Sachsentherme1.jpg - © Eigene Aufnahmen</li>
+                        <li><strong>Unsplash.com:</strong> Kostenlose Bilder unter Unsplash-Lizenz für kommerzielle Nutzung</li>
+                        <li><strong>Wikipedia/Wikimedia Commons:</strong> Bilder unter Creative Commons Lizenz mit entsprechender Namensnennung</li>
+                    </ul>
+                    <p style={{ fontSize: '0.9rem', color: '#666' }}>
+                        <strong>Hinweis:</strong> Alle verwendeten Bilder werden unter den jeweiligen Lizenzbedingungen genutzt. 
+                        Bei Fragen zu Bildrechten kontaktieren Sie uns bitte.
                     </p>
 
                     <p style={{ marginTop: 'var(--spacing-2xl)', fontSize: '0.875rem', color: 'var(--color-text-light)' }}>

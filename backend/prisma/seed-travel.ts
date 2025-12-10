@@ -124,7 +124,15 @@ async function main() {
         },
     });
 
-
+    const newYork = await prisma.destination.upsert({
+        where: { id: 11 },
+        update: {},
+        create: {
+            country: 'USA',
+            city: 'New York',
+            description: 'Die Stadt, die niemals schläft - Wolkenkratzer, Broadway und unendliche Möglichkeiten.',
+        },
+    });
 
     const prague = await prisma.destination.upsert({
         where: { id: 12 },
@@ -146,7 +154,7 @@ async function main() {
         },
     });
 
-    console.log('Destinations created: 13');
+    console.log('Destinations created: 14');
 
     // Create Tours with various categories
     const tours = await Promise.all([
@@ -360,6 +368,40 @@ async function main() {
                 featured: true,
                 duration: 5,
                 included: JSON.stringify(['Bahnfahrt 1. Klasse', 'Hotel im Stadtzentrum', 'Frühstück täglich', 'Alle Eintritte', 'Leipzig Card', 'Reiseleitung']),
+            },
+        }),
+
+        // New York - Big Apple Sommer
+        prisma.tour.create({
+            data: {
+                destinationId: newYork.id,
+                title: 'New York Sommer-Abenteuer',
+                description: 'Erleben Sie den heißen Sommer in der Stadt, die niemals schläft. Central Park, Times Square und Brooklyn Bridge im Sonnenschein.',
+                price: 1299,
+                seatsTotal: 20,
+                seatsBooked: 12,
+                category: 'Sommerreisen',
+                imageUrl: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop',
+                featured: true,
+                duration: 8,
+                included: JSON.stringify(['Flug Economy', 'Hotel 4* Manhattan', 'Frühstück', 'Metro Pass', 'Stadtführung', 'Statue of Liberty Tour']),
+            },
+        }),
+
+        // Santorini Sommertraum
+        prisma.tour.create({
+            data: {
+                destinationId: santorini.id,
+                title: 'Santorini Sommertraum',
+                description: 'Verbringen Sie den perfekten Sommer auf der schönsten griechischen Insel. Traumhafte Sonnenuntergänge und türkisblaues Meer.',
+                price: 899,
+                seatsTotal: 16,
+                seatsBooked: 9,
+                category: 'Sommerreisen',
+                imageUrl: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop',
+                featured: true,
+                duration: 7,
+                included: JSON.stringify(['Flug ab Deutschland', 'Hotel mit Meerblick', 'Halbpension', 'Mietwagen 3 Tage', 'Weinverkostung', 'Bootstour']),
             },
         }),
 

@@ -13,13 +13,8 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
 
     const images = {
         exterior: [
-            '/germany/leipzig/nikolaikirche-aussen.jpg',
-            '/germany/leipzig/nikolaikirche-turm.jpg'
         ],
         interior: [
-            '/germany/leipzig/nikolaikirche-innenansicht.jpg',
-            '/germany/leipzig/nikolaikirche-innen.jpg',
-            '/germany/leipzig/nikolaikirche-saeulen.jpg'
         ],
         revolution: [
             '/germany/leipzig/nikolaikirche-friedensgebet.jpg',

@@ -13,18 +13,17 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
 
     const images = {
         thermal: [
-            '/germany/leipzig/sachsentherme-thermal.jpg',
-            '/germany/leipzig/sachsentherme-pool.jpg',
-            '/germany/leipzig/Sachsentherme1.jpg'
+            '/germany/leipzig/leipzig-panorama.jpg',
+            '/germany/leipzig/city-hochhaus-aussicht.jpg',
+            '/germany/leipzig/voelkerschlachtdenkmal-aussen.jpg'
         ],
         wellness: [
-            '/germany/leipzig/sachsentherme-wellness.jpg',
-            '/germany/leipzig/sachsentherme-spa.jpg',
-            '/germany/leipzig/sachsentherme-außen.jpg'
+            '/germany/leipzig/city-hochhaus-interior-neu.jpg',
+            '/germany/leipzig/restaurant-uni-riese.jpg',
+            '/germany/leipzig/city-hochhaus-lobby-neu.jpg'
         ],
         sauna: [
-            '/germany/leipzig/sachsentherme-sauna.jpg',
-            '/germany/leipzig/sachsentherme-thermal.jpg'
+            '/germany/leipzig/nikolaikirche-innenansicht.jpg'
         ]
     };
 
@@ -68,7 +67,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
                                 alt="Sachsentherme Leipzig"
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
-                                    e.currentTarget.src = "/germany/leipzig/sachsentherme-wellness.jpg";
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop";
                                 }}
                             />
                         </div>

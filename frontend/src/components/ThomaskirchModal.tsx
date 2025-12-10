@@ -17,8 +17,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
             '/germany/leipzig/thomaskirche-turm.jpg'
         ],
         interior: [
-            '/germany/leipzig/thomaskirche-innen.jpg',
-            '/germany/leipzig/thomaskirche-altar.jpg'
+            '/germany/leipzig/thomaskirche-innenraum-leipzig.jpg'
         ],
         music: [
             '/germany/leipzig/thomaskirche-orgel.jpg',
@@ -32,43 +31,52 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>Thomaskirche Leipzig</h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
-                            <div>
-                                <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Die Thomaskirche ist eine der berühmtesten Kirchen Deutschlands und weltbekannt als 
-                                    Wirkungsstätte von Johann Sebastian Bach. Hier wirkte der große Komponist von 1723 bis 
-                                    zu seinem Tod 1750 als Thomaskantor und schuf unvergängliche Meisterwerke.
-                                </p>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-                                    <div>
-                                        <h4>📍 Standort</h4>
-                                        <p>Thomaskirchhof 18<br/>04109 Leipzig</p>
-                                    </div>
-                                    <div>
-                                        <h4>🕒 Öffnungszeiten</h4>
-                                        <p>Täglich 09:00 - 18:00 Uhr<br/>Sonn-/Feiertags ab 13:00 Uhr</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4>🎯 Highlights</h4>
-                                    <ul style={{ columns: 2, columnGap: '2rem' }}>
-                                        <li>Johann Sebastian Bach Grab</li>
-                                        <li>Weltberühmter Thomanerchor</li>
-                                        <li>Historische Sauer-Orgel</li>
-                                        <li>Gotische Architektur (15. Jhdt.)</li>
-                                        <li>Bach-Denkmal vor der Kirche</li>
-                                        <li>Regelmäßige Konzerte</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        {/* Großes Hauptbild - vollbreite Darstellung */}
+                        <div style={{ marginBottom: '2rem' }}>
                             <img 
                                 src="/germany/leipzig/thomaskirche.jpg" 
                                 alt="Thomaskirche Leipzig" 
-                                style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
+                                style={{ 
+                                    width: '100%', 
+                                    height: window.innerWidth > 768 ? '500px' : '300px', 
+                                    objectFit: 'cover', 
+                                    borderRadius: '12px',
+                                    boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                                }}
                                 onError={(e) => {
-                                    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop";
+                                    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop";
                                 }}
                             />
+                        </div>
+                        
+                        {/* Informationsbereich */}
+                        <div>
+                            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+                                Die Thomaskirche ist eine der berühmtesten Kirchen Deutschlands und weltbekannt als 
+                                Wirkungsstätte von Johann Sebastian Bach. Hier wirkte der große Komponist von 1723 bis 
+                                zu seinem Tod 1750 als Thomaskantor und schuf unvergängliche Meisterwerke.
+                            </p>
+                            <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+                                <div>
+                                    <h4>📍 Standort</h4>
+                                    <p>Thomaskirchhof 18<br/>04109 Leipzig</p>
+                                </div>
+                                <div>
+                                    <h4>🕒 Öffnungszeiten</h4>
+                                    <p>Täglich 09:00 - 18:00 Uhr<br/>Sonn-/Feiertags ab 13:00 Uhr</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>🎯 Highlights</h4>
+                                <ul style={{ columns: window.innerWidth > 768 ? 2 : 1, columnGap: '2rem' }}>
+                                    <li>Johann Sebastian Bach Grab</li>
+                                    <li>Weltberühmter Thomanerchor</li>
+                                    <li>Historische Sauer-Orgel</li>
+                                    <li>Gotische Architektur (15. Jhdt.)</li>
+                                    <li>Bach-Denkmal vor der Kirche</li>
+                                    <li>Regelmäßige Konzerte</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 );
@@ -180,15 +188,31 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             ⛪ Innenraum & Ausstattung
                         </h3>
                         
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
                                     <img 
                                         src={img}
                                         alt={`Thomaskirche Innen ${index + 1}`}
-                                        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                                        style={{ 
+                                            width: '100%', 
+                                            height: '300px', 
+                                            objectFit: 'cover', 
+                                            borderRadius: '12px',
+                                            boxShadow: '0 6px 20px rgba(0,0,0,0.12)',
+                                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                            cursor: 'pointer'
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1.02)';
+                                            e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.18)';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                            e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.12)';
+                                        }}
                                         onError={(e) => {
-                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1580285830000 + index * 1500}?w=400&h=300&fit=crop`;
+                                            e.currentTarget.src = `https://images.unsplash.com/photo-${1580285830000 + index * 1500}?w=600&h=400&fit=crop`;
                                         }}
                                     />
                                 </div>

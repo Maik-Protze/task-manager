@@ -34,8 +34,8 @@ const TravelDreamsPresentation: React.FC = () => {
         <div>
           <h2 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>📋 Projekt Features</h2>
           <ul style={{ fontSize: '1.5rem', lineHeight: '2' }}>
-            <li>✅ <strong>12 Premium Touren</strong> - Europa-Asien/Afrika</li>
-            <li>✅ <strong>8 Destinationen</strong> - Berlin - Dubai</li>
+            <li>✅ <strong>16 Premium Touren</strong> - Europa-Asien/Afrika</li>
+            <li>✅ <strong>14 Destinationen</strong> - Berlin - Dubai</li>
             <li>✅ <strong>Vollständig auf Deutsch</strong> - Lokalisierung 100%</li>
             <li>✅ <strong>Moderne Technologien</strong> - React + TypeScript</li>
             <li>✅ <strong>SQLite Datenbank</strong> - Performante Datenspeicherung</li>
