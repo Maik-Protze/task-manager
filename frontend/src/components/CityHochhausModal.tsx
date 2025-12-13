@@ -19,6 +19,9 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
             '/germany/leipzig/restaurant-uni-riese.jpg'
         ],
         panorama: [
+            '/germany/leipzig/leipzig-panorama.jpg',
+            '/germany/leipzig/city-hochhaus-aussicht.jpg',
+            '/germany/leipzig/uni-riese-stadtbild.jpg'
         ]
     };
 
@@ -31,18 +34,18 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
                             <div>
                                 <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Das City-Hochhaus, liebevoll "Uni-Riese" genannt, ist mit 142 Metern das höchste Gebäude 
-                                    Leipzigs und ein markantes Wahrzeichen der Stadt. Von 1968 bis 1972 erbaut, beherbergt es 
+                                    Das City-Hochhaus, liebevoll "Uni-Riese" genannt, ist mit 142 Metern das höchste Gebäude
+                                    Leipzigs und ein markantes Wahrzeichen der Stadt. Von 1968 bis 1972 erbaut, beherbergt es
                                     heute die Universität Leipzig und bietet eine atemberaubende Aussicht über Leipzig.
                                 </p>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                     <div>
                                         <h4>📍 Standort</h4>
-                                        <p>Augustusplatz 9<br/>04109 Leipzig</p>
+                                        <p>Augustusplatz 9<br />04109 Leipzig</p>
                                     </div>
                                     <div>
                                         <h4>🕒 Öffnungszeiten</h4>
-                                        <p>Mo-Fr: 06:00 - 22:00 Uhr<br/>Sa-So: 08:00 - 20:00 Uhr</p>
+                                        <p>Mo-Fr: 06:00 - 22:00 Uhr<br />Sa-So: 08:00 - 20:00 Uhr</p>
                                     </div>
                                 </div>
                                 <div>
@@ -57,9 +60,9 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                     </ul>
                                 </div>
                             </div>
-                            <img 
-                                src="/germany/leipzig/uni-riese-stadtbild.jpg" 
-                                alt="City-Hochhaus Leipzig" 
+                            <img
+                                src="/germany/leipzig/uni-riese-stadtbild.jpg"
+                                alt="City-Hochhaus Leipzig"
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=400&fit=crop";
@@ -76,7 +79,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
                             {images.exterior.map((img, index) => (
                                 <div key={index} style={{ position: 'relative', maxWidth: '400px', width: '100%' }}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`City-Hochhaus Außen ${index + 1}`}
                                         style={{ width: '100%', height: '500px', objectFit: 'contain', borderRadius: '8px', backgroundColor: '#f8f9fa' }}
@@ -90,8 +93,8 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div>
                             <h4>🏗️ Architektonische Besonderheiten</h4>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                Das City-Hochhaus ist ein herausragendes Beispiel der DDR-Architektur der späten 1960er Jahre. 
-                                Mit seiner charakteristischen Fassade und der imposanten Höhe prägt es seit über 50 Jahren 
+                                Das City-Hochhaus ist ein herausragendes Beispiel der DDR-Architektur der späten 1960er Jahre.
+                                Mit seiner charakteristischen Fassade und der imposanten Höhe prägt es seit über 50 Jahren
                                 die Skyline Leipzigs.
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '1rem' }}>
@@ -123,7 +126,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`City-Hochhaus Innen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -134,9 +137,9 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                 </div>
                             ))}
                         </div>
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                             gap: '2rem',
                             marginBottom: '2rem'
                         }}>
@@ -183,18 +186,18 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         }}>
                             <h4 style={{ color: '#374151', marginBottom: '1rem' }}>ℹ️ Besucherinfo</h4>
                             <p style={{ fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-                                Das City-Hochhaus ist als Universitätsgebäude grundsätzlich öffentlich zugänglich. 
+                                Das City-Hochhaus ist als Universitätsgebäude grundsätzlich öffentlich zugänglich.
                                 Das Panorama-Restaurant im 29. Stock bietet die beste Aussichtsmöglichkeit für Touristen.
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '1rem' }}>
                                 <div>
-                                    <strong>🕒 Öffnungszeiten Restaurant:</strong><br/>
-                                    Mo-Sa: 11:30-22:00 Uhr<br/>
+                                    <strong>🕒 Öffnungszeiten Restaurant:</strong><br />
+                                    Mo-Sa: 11:30-22:00 Uhr<br />
                                     So: 11:30-21:00 Uhr
                                 </div>
                                 <div>
-                                    <strong>📞 Reservierung:</strong><br/>
-                                    Tel: +49 341 710-0<br/>
+                                    <strong>📞 Reservierung:</strong><br />
+                                    Tel: +49 341 710-0<br />
                                     restaurant@city-hochhaus.de
                                 </div>
                             </div>
@@ -211,7 +214,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.panorama.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`City-Hochhaus Panorama ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -222,11 +225,11 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                 </div>
                             ))}
                         </div>
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #3B82F6, #1E40AF)',
@@ -285,9 +288,9 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 🌟 Besondere Aussichtspunkte
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '1.5rem'
                             }}>
                                 <div style={{ textAlign: 'center' }}>
@@ -309,7 +312,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>ℹ️ Besucherinformationen</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '8px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🕒 Öffnungszeiten</h4>
@@ -318,14 +321,14 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                         <strong>Universitätsbereiche:</strong>
                                     </div>
                                     <div style={{ marginBottom: '1rem', color: '#6b7280' }}>
-                                        Mo-Fr: 06:00-22:00 Uhr<br/>
+                                        Mo-Fr: 06:00-22:00 Uhr<br />
                                         Sa-So: 08:00-20:00 Uhr
                                     </div>
                                     <div style={{ marginBottom: '0.5rem' }}>
                                         <strong>Restaurant (29. Stock):</strong>
                                     </div>
                                     <div style={{ color: '#6b7280' }}>
-                                        Mo-So: 11:00-23:00 Uhr<br/>
+                                        Mo-So: 11:00-23:00 Uhr<br />
                                         (bei gutem Wetter)
                                     </div>
                                 </div>
@@ -338,14 +341,14 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                                         <strong>Universitätsbereiche:</strong>
                                     </div>
                                     <div style={{ marginBottom: '1rem', color: '#92400e' }}>
-                                        Kostenfrei für Studierende<br/>
+                                        Kostenfrei für Studierende<br />
                                         Besucher nach Anmeldung
                                     </div>
                                     <div style={{ marginBottom: '0.5rem' }}>
                                         <strong>Restaurant:</strong>
                                     </div>
                                     <div style={{ color: '#92400e' }}>
-                                        Reservierung empfohlen<br/>
+                                        Reservierung empfohlen<br />
                                         Tel: 0341 97-30000
                                     </div>
                                 </div>
@@ -357,15 +360,15 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                             <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr 1fr' : '1fr', gap: '1rem', fontSize: '1.1rem' }}>
                                 <div>
                                     <div><strong>Straßenbahn:</strong></div>
-                                    <div>Linien 4, 7, 12, 15<br/>Haltestelle Augustusplatz</div>
+                                    <div>Linien 4, 7, 12, 15<br />Haltestelle Augustusplatz</div>
                                 </div>
                                 <div>
                                     <div><strong>S-Bahn:</strong></div>
-                                    <div>S1, S2, S3, S4, S5<br/>Leipzig Hauptbahnhof (5 Min. Fußweg)</div>
+                                    <div>S1, S2, S3, S4, S5<br />Leipzig Hauptbahnhof (5 Min. Fußweg)</div>
                                 </div>
                                 <div>
                                     <div><strong>Parken:</strong></div>
-                                    <div>Tiefgarage Augustusplatz<br/>Parkhaus Hauptbahnhof</div>
+                                    <div>Tiefgarage Augustusplatz<br />Parkhaus Hauptbahnhof</div>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +385,7 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>💰 Eintrittspreise & Informationen</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1.5rem' }}>🎓 Universitätsbereiche</h4>
@@ -434,15 +437,15 @@ const CityHochhausModal: React.FC<CityHochhausModalProps> = ({ isOpen, onClose }
                             <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr 1fr' : '1fr', gap: '1rem', fontSize: '1.1rem' }}>
                                 <div>
                                     <div><strong>Universitätsbereiche:</strong></div>
-                                    <div>Mo-Fr: 06:00-22:00<br/>Sa-So: 08:00-20:00</div>
+                                    <div>Mo-Fr: 06:00-22:00<br />Sa-So: 08:00-20:00</div>
                                 </div>
                                 <div>
                                     <div><strong>Panorama Restaurant:</strong></div>
-                                    <div>Mo-Sa: 11:30-22:00<br/>So: 11:30-21:00</div>
+                                    <div>Mo-Sa: 11:30-22:00<br />So: 11:30-21:00</div>
                                 </div>
                                 <div>
                                     <div><strong>Öffentliche Führungen:</strong></div>
-                                    <div>Sa: 14:00 & 16:00<br/>So: 11:00 & 14:00</div>
+                                    <div>Sa: 14:00 & 16:00<br />So: 11:00 & 14:00</div>
                                 </div>
                             </div>
                         </div>

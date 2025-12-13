@@ -23,7 +23,7 @@ const SachsenthermeModal: React.FC<SachsenthermeModalProps> = ({ isOpen, onClose
             '/germany/leipzig/city-hochhaus-lobby-neu.jpg'
         ],
         sauna: [
-            '/germany/leipzig/nikolaikirche-innenansicht.jpg'
+            'https://images.unsplash.com/photo-1548625361-e88c60eb8370?w=800&h=600&fit=crop'
         ]
     };
 

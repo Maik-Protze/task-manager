@@ -69,8 +69,65 @@ export default function Blog() {
                 </div>
             </div>
 
+            {/* Über uns Section */}
+            <section style={{ background: 'white', padding: 'var(--spacing-3xl) 0' }}>
+                <div className="container">
+                    <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-2xl)' }}>
+                        <h2 style={{ color: 'var(--color-text-dark)', marginBottom: 'var(--spacing-md)' }}>Über uns</h2>
+                        <p style={{ fontSize: '1.2rem', color: 'var(--color-text-medium)' }}>
+                            Wir sind ein Team aus leidenschaftlichen Reiseexperten, die es sich zur Aufgabe gemacht haben,
+                            Ihnen die schönsten Orte der Welt näherzubringen. Mit authentischen Berichten und geprüften Tipps.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-3">
+                        <div style={{ padding: 'var(--spacing-xl)', background: 'var(--color-bg-secondary)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>🌍</div>
+                            <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>Expertise</h3>
+                            <p style={{ color: 'var(--color-text-medium)' }}>Jahrelange Erfahrung in der Tourismusbranche und lokale Partner in über 50 Ländern.</p>
+                        </div>
+                        <div style={{ padding: 'var(--spacing-xl)', background: 'var(--color-bg-secondary)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>❤️</div>
+                            <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>Leidenschaft</h3>
+                            <p style={{ color: 'var(--color-text-medium)' }}>Wir reisen selbst für unser Leben gern und teilen nur, was wir wirklich empfehlen können.</p>
+                        </div>
+                        <div style={{ padding: 'var(--spacing-xl)', background: 'var(--color-bg-secondary)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>🛡️</div>
+                            <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>Vertrauen</h3>
+                            <p style={{ color: 'var(--color-text-medium)' }}>Unabhängige Bewertungen und ehrliche Meinungen stehen bei uns an erster Stelle.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Newsletter Section */}
+            <section style={{ background: 'var(--color-primary)', padding: 'var(--spacing-2xl) 0', color: 'white' }}>
+                <div className="container" style={{ textAlign: 'center' }}>
+                    <h2 style={{ color: 'white', marginBottom: 'var(--spacing-md)' }}>Verpassen Sie kein Abenteuer!</h2>
+                    <p style={{ fontSize: '1.2rem', marginBottom: 'var(--spacing-xl)', opacity: 0.9 }}>
+                        Abonnieren Sie unseren Newsletter für wöchentliche Reisetipps und exklusive Angebote.
+                    </p>
+                    <div style={{ display: 'flex', gap: 'var(--spacing-md)', justifyContent: 'center', maxWidth: '500px', margin: '0 auto' }}>
+                        <input
+                            type="email"
+                            placeholder="Ihre E-Mail-Adresse"
+                            style={{
+                                padding: '1rem',
+                                borderRadius: 'var(--radius-full)',
+                                border: 'none',
+                                flex: 1,
+                                fontSize: '1rem'
+                            }}
+                        />
+                        <button className="btn" style={{ background: 'var(--color-text-dark)', color: 'white', border: 'none' }}>
+                            Anmelden
+                        </button>
+                    </div>
+                </div>
+            </section>
+
             {/* Content */}
-            <section>
+            <section style={{ padding: 'var(--spacing-3xl) 0' }}>
                 <div className="container">
                     {/* Category Filter */}
                     <div className="flex gap-md mb-2xl justify-center" style={{ flexWrap: 'wrap' }}>

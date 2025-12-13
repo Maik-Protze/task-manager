@@ -13,6 +13,15 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Impressum from './pages/Impressum'
 import Presentation2 from './presentation/Presentation2'
+import TravelDreamsPresentation from './presentation/TravelDreamsPresentation'
+
+// New TravelDreams Extension Pages
+import CarRental from './pages/CarRental'
+import TravelQuiz from './pages/TravelQuiz'
+import TravelAlerts from './pages/TravelAlerts'
+import Adventures from './pages/Adventures'
+import TripPlanner from './pages/TripPlanner'
+import DestinationComparison from './pages/DestinationComparison'
 
 import './index.css'
 
@@ -142,6 +151,61 @@ export default function App() {
                   <span style={{ fontSize: '1.25rem' }}>📰</span>
                   <span>Blog</span>
                 </Link>
+
+                {/* Dropdown Mehr */}
+                <div className="nav-dropdown" style={{ position: 'relative' }}>
+                  <button
+                    className="nav-link-modern"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.75rem 1.25rem',
+                      color: 'white',
+                      fontWeight: 500,
+                      borderRadius: 'var(--radius-lg)',
+                      transition: 'all 0.3s ease',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <span style={{ fontSize: '1.25rem' }}>🌟</span>
+                    <span>Mehr ▾</span>
+                  </button>
+                  <div className="dropdown-menu" style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: 0,
+                    background: 'white',
+                    borderRadius: 'var(--radius-lg)',
+                    boxShadow: 'var(--shadow-xl)',
+                    padding: 'var(--spacing-sm)',
+                    minWidth: '200px',
+                    zIndex: 1001,
+                    display: 'none',
+                  }}>
+                    <Link to="/car-rental" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      🚗 Autovermietung
+                    </Link>
+                    <Link to="/adventures" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      ⛰️ Abenteuer
+                    </Link>
+                    <Link to="/trip-planner" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      🤖 KI Reiseplaner
+                    </Link>
+                    <Link to="/travel-quiz" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      🧠 Reise-Quiz
+                    </Link>
+                    <Link to="/travel-alerts" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      ⚠️ Reise-Warnungen
+                    </Link>
+                    <Link to="/compare" className="dropdown-item" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1rem', color: 'var(--color-text-dark)', borderRadius: 'var(--radius-md)' }}>
+                      ⚖️ Vergleich
+                    </Link>
+                  </div>
+                </div>
+
                 <Link
                   to="/contact"
                   style={{
@@ -212,7 +276,24 @@ export default function App() {
                 <Link to="/summer-programs" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
                   <span>☀️</span> Sommerprogramme
                 </Link>
-
+                <Link to="/car-rental" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>🚗</span> Autovermietung
+                </Link>
+                <Link to="/adventures" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>⛰️</span> Abenteuer
+                </Link>
+                <Link to="/trip-planner" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>🤖</span> KI Reiseplaner
+                </Link>
+                <Link to="/travel-quiz" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>🧠</span> Reise-Quiz
+                </Link>
+                <Link to="/travel-alerts" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>⚠️</span> Reise-Warnungen
+                </Link>
+                <Link to="/compare" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
+                  <span>⚖️</span> Vergleich
+                </Link>
                 <Link to="/blog" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 500 }}>
                   <span>📰</span> Blog
                 </Link>
@@ -239,11 +320,18 @@ export default function App() {
             <Route path="/tours/:id" element={<TourDetails />} />
             <Route path="/summer-programs" element={<SummerPrograms />} />
             <Route path="/summer-programs/:tourId" element={<SummerTourDetails />} />
-
+            {/* New TravelDreams Extension Routes */}
+            <Route path="/car-rental" element={<CarRental />} />
+            <Route path="/travel-quiz" element={<TravelQuiz />} />
+            <Route path="/travel-alerts" element={<TravelAlerts />} />
+            <Route path="/adventures" element={<Adventures />} />
+            <Route path="/trip-planner" element={<TripPlanner />} />
+            <Route path="/compare" element={<DestinationComparison />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/presentation" element={<Presentation2 />} />
+            <Route path="/presentation" element={<TravelDreamsPresentation />} />
+            <Route path="/presentation2" element={<Presentation2 />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/impressum" element={<Impressum />} />
@@ -274,6 +362,7 @@ export default function App() {
                   <Link to="/terms" style={{ color: '#94A3B8' }}>AGB</Link>
                   <Link to="/impressum" style={{ color: '#94A3B8' }}>Impressum</Link>
                   <Link to="/presentation" style={{ color: '#94A3B8' }}>Präsentation</Link>
+                  <Link to="/presentation2" style={{ color: '#94A3B8' }}>Präsentation2</Link>
                 </div>
               </div>
               <div>
@@ -304,6 +393,12 @@ export default function App() {
             .mobile-nav {
               display: none !important;
             }
+          }
+          .nav-dropdown:hover .dropdown-menu {
+            display: block !important;
+          }
+          .dropdown-item:hover {
+            background: var(--color-bg-secondary);
           }
         `}</style>
       </div>

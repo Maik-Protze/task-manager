@@ -14,14 +14,16 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
     const images = {
         exterior: [
             '/germany/leipzig/auerbachs-keller-eingang1.jpg',
-            '/germany/leipzig/auerbachs-keller-fassade.jpg'
+            'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop'
         ],
         interior: [
+            'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1574263350337-347434774677?w=800&h=600&fit=crop'
         ],
         restaurant: [
             '/germany/leipzig/auerbachs-keller.jpg',
-            '/germany/leipzig/auerbachs-keller-restaurant.jpg',
-            '/germany/leipzig/auerbachs-keller-speisesaal.jpg'
+            'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop'
         ]
     };
 
@@ -34,18 +36,18 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
                             <div>
                                 <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Auerbachs Keller ist Leipzigs berühmteste historische Gaststätte und wurde durch Goethes 
-                                    "Faust" weltbekannt. Seit 1525 werden hier Gäste bewirtet - eine über 500-jährige Tradition 
+                                    Auerbachs Keller ist Leipzigs berühmteste historische Gaststätte und wurde durch Goethes
+                                    "Faust" weltbekannt. Seit 1525 werden hier Gäste bewirtet - eine über 500-jährige Tradition
                                     der sächsischen Gastlichkeit im Herzen der Leipziger Altstadt.
                                 </p>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                     <div>
                                         <h4>📍 Standort</h4>
-                                        <p>Grimmaische Straße 2-4<br/>04109 Leipzig (Mädler-Passage)</p>
+                                        <p>Grimmaische Straße 2-4<br />04109 Leipzig (Mädler-Passage)</p>
                                     </div>
                                     <div>
                                         <h4>🕒 Öffnungszeiten</h4>
-                                        <p>Täglich 11:30 - 24:00 Uhr<br/>Küche bis 22:30 Uhr</p>
+                                        <p>Täglich 11:30 - 24:00 Uhr<br />Küche bis 22:30 Uhr</p>
                                     </div>
                                 </div>
                                 <div>
@@ -60,9 +62,9 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                                     </ul>
                                 </div>
                             </div>
-                            <img 
-                                src="/germany/leipzig/auerbachskeller.jpg" 
-                                alt="Auerbachs Keller" 
+                            <img
+                                src="/germany/leipzig/auerbachskeller.jpg"
+                                alt="Auerbachs Keller"
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1551632436-cbfa8dd35adfa?w=300&h=400&fit=crop";
@@ -79,7 +81,7 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.exterior.map((img, index) => (
                                 <div key={index} style={{ position: 'relative' }}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Auerbachs Keller Außen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -93,9 +95,9 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                         <div>
                             <h4>🏛️ Historische Details</h4>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-                                Der berühmte Eingang in der Mädler-Passage zeigt die Skulpturengruppe "Faust und 
-                                Mephistopheles" von Mathieu Molitor. Die bronzenen Figuren erinnern an Goethes 
-                                berühmte Szene, die hier im Keller spielt. Die elegante Jugendstil-Passage 
+                                Der berühmte Eingang in der Mädler-Passage zeigt die Skulpturengruppe "Faust und
+                                Mephistopheles" von Mathieu Molitor. Die bronzenen Figuren erinnern an Goethes
+                                berühmte Szene, die hier im Keller spielt. Die elegante Jugendstil-Passage
                                 wurde 1914 eröffnet und beherbergt den weltbekannten Eingang.
                             </p>
                         </div>
@@ -109,7 +111,7 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Auerbachs Keller Innen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -140,7 +142,7 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                             {images.restaurant.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Auerbachs Keller Restaurant ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -179,7 +181,7 @@ const AuerbachskellerModal: React.FC<AuerbachskellerModalProps> = ({ isOpen, onC
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>💰 Preise & Reservierung</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '8px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>🍽️ Hauptgerichte</h4>

@@ -13,12 +13,16 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
 
     const images = {
         exterior: [
+            'https://images.unsplash.com/photo-1548625361-e88c60eb8370?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=800&h=600&fit=crop'
         ],
         interior: [
+            'https://images.unsplash.com/photo-1543791959-12b3f543282a?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1515169067750-d51a73b0516c?w=800&h=600&fit=crop'
         ],
         revolution: [
-            '/germany/leipzig/nikolaikirche-friedensgebet.jpg',
-            '/germany/leipzig/nikolaikirche-1989.jpg'
+            'https://images.unsplash.com/photo-1605118789839-4458564a4788?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1590053160917-2d4386908566?w=800&h=600&fit=crop'
         ]
     };
 
@@ -31,18 +35,18 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 300px' : '1fr', gap: '2rem', alignItems: 'start' }}>
                             <div>
                                 <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                    Die Nikolaikirche ist die älteste und größte Kirche Leipzigs und wurde weltberühmt als 
-                                    Ausgangspunkt der Friedlichen Revolution von 1989. Die Montagsdemonstrationen begannen hier 
+                                    Die Nikolaikirche ist die älteste und größte Kirche Leipzigs und wurde weltberühmt als
+                                    Ausgangspunkt der Friedlichen Revolution von 1989. Die Montagsdemonstrationen begannen hier
                                     und führten zum Fall der Berliner Mauer und zur Deutschen Wiedervereinigung.
                                 </p>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                     <div>
                                         <h4>📍 Standort</h4>
-                                        <p>Nikolaikirchhof 3<br/>04109 Leipzig</p>
+                                        <p>Nikolaikirchhof 3<br />04109 Leipzig</p>
                                     </div>
                                     <div>
                                         <h4>🕒 Öffnungszeiten</h4>
-                                        <p>Täglich 10:00 - 18:00 Uhr<br/>Sonn-/Feiertags ab 11:30 Uhr</p>
+                                        <p>Täglich 10:00 - 18:00 Uhr<br />Sonn-/Feiertags ab 11:30 Uhr</p>
                                     </div>
                                 </div>
                                 <div>
@@ -57,9 +61,9 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                                     </ul>
                                 </div>
                             </div>
-                            <img 
-                                src="/germany/leipzig/nikolaikirche.jpg" 
-                                alt="Nikolaikirche Leipzig" 
+                            <img
+                                src="https://images.unsplash.com/photo-1548625361-e88c60eb8370?w=800&h=600&fit=crop"
+                                alt="Nikolaikirche Leipzig"
                                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '8px' }}
                                 onError={(e) => {
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1566139971864-3b2139bb95d4?w=300&h=400&fit=crop";
@@ -75,11 +79,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             🏛️ Außenarchitektur & Geschichte
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                             {images.exterior.map((img, index) => (
                                 <div key={index} style={{ position: 'relative' }}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Nikolaikirche Außen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -91,11 +95,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #DC2626, #991B1B)',
@@ -134,7 +138,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: '#f8fafc',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -143,9 +147,9 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 🏗️ Architektonische Besonderheiten
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                                 gap: '1.5rem'
                             }}>
                                 <div>
@@ -175,11 +179,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             ⛪ Innenraum & Ausstattung
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Nikolaikirche Innen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -191,11 +195,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'white',
@@ -246,7 +250,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: 'linear-gradient(135deg, #FEF3C7, #FDE68A)',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -255,9 +259,9 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#92400E', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 📖 Besondere Ausstattung
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '1.5rem',
                                 fontSize: '0.95rem'
                             }}>
@@ -288,11 +292,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             🕊️ Friedliche Revolution 1989
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                             {images.revolution.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Nikolaikirche Revolution ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -304,11 +308,11 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #DC2626, #991B1B)',
@@ -350,7 +354,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: 'linear-gradient(135deg, #F3F4F6, #E5E7EB)',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -359,9 +363,9 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 📅 Chronologie der Ereignisse
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '2rem'
                             }}>
                                 <div style={{
@@ -372,7 +376,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                                 }}>
                                     <h5 style={{ color: '#DC2626', marginBottom: '1rem' }}>🕯️ 1982-1988</h5>
                                     <p style={{ fontSize: '0.95rem', marginBottom: '1rem' }}>
-                                        Beginn der Friedensgebete in der Nikolaikirche. Pfarrer Christian Führer 
+                                        Beginn der Friedensgebete in der Nikolaikirche. Pfarrer Christian Führer
                                         etabliert regelmäßige Montagsgebete für Frieden und Gerechtigkeit.
                                     </p>
                                 </div>
@@ -385,14 +389,14 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                                 }}>
                                     <h5 style={{ color: '#059669', marginBottom: '1rem' }}>📈 September 1989</h5>
                                     <p style={{ fontSize: '0.95rem', marginBottom: '1rem' }}>
-                                        Teilnehmerzahlen steigen dramatisch an. Aus 1.000 Teilnehmern werden 
+                                        Teilnehmerzahlen steigen dramatisch an. Aus 1.000 Teilnehmern werden
                                         wöchentlich mehr, die Kirche platzt aus allen Nähten.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: '#FEF3C7',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -423,7 +427,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>💰 Besichtigungspreise & Führungen</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1.5rem' }}>⛪ Kirchenbesichtigung</h4>
@@ -525,7 +529,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
     };
 
     return (
-        <div 
+        <div
             style={{
                 position: 'fixed',
                 top: 0,
@@ -541,7 +545,7 @@ const NikolaikircheModal: React.FC<NikolaikircheModalProps> = ({ isOpen, onClose
             }}
             onClick={onClose}
         >
-            <div 
+            <div
                 style={{
                     backgroundColor: 'white',
                     borderRadius: '12px',

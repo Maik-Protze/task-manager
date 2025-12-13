@@ -72,3 +72,94 @@ model Booking {
   seats     Int
   createdAt DateTime @default(now())
 }
+
+// ============================================
+// NEW MODELS FOR TRAVELDREAMS EXTENSION
+// ============================================
+
+model CarRental {
+  id            Int          @id @default(autoincrement())
+  name          String
+  type          String       // SUV, Sedan, Compact, Luxury
+  transmission  String       // Automatic, Manual
+  fuel          String       // Petrol, Diesel, Electric, Hybrid
+  pricePerDay   Float
+  seats         Int
+  imageUrl      String?
+  features      String?      // JSON array
+  available     Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  bookings      CarBooking[]
+}
+
+model CarBooking {
+  id            Int       @id @default(autoincrement())
+  car           CarRental @relation(fields: [carId], references: [id])
+  carId         Int
+  customerName  String
+  customerEmail String
+  startDate     DateTime
+  endDate       DateTime
+  totalPrice    Float
+  createdAt     DateTime  @default(now())
+}
+
+model TravelAlert {
+  id          Int      @id @default(autoincrement())
+  country     String   @unique
+  safetyLevel String   // safe, moderate, dangerous
+  riskScore   Int      // 1-10
+  description String
+  warnings    String?  // JSON array
+  lastUpdated DateTime @default(now())
+  imageUrl    String?
+}
+
+model Adventure {
+  id           Int      @id @default(autoincrement())
+  name         String
+  location     String
+  country      String
+  difficulty   String   // Easy, Moderate, Challenging, Expert
+  elevation    Int?     // meters
+  duration     String   // e.g., "5-7 days"
+  bestSeason   String   // e.g., "April-October"
+  equipment    String?  // JSON array
+  tips         String?
+  description  String
+  imageUrl     String?
+  routeProfile String?  // JSON for elevation profile
+  createdAt    DateTime @default(now())
+}
+
+model TripPlan {
+  id          Int      @id @default(autoincrement())
+  destination String
+  country     String
+  budget      Float
+  duration    Int      // days
+  month       String
+  travelType  String   // Adventure, Relaxation, Culture, Beach, City
+  totalCost   Float
+  itinerary   String   // JSON
+  activities  String   // JSON
+  safetyLevel String
+  weather     String   // JSON
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+}
+
+model DestinationData {
+  id              Int    @id @default(autoincrement())
+  country         String @unique
+  avgDailyCost    Float
+  safetyLevel     String
+  bestMonths      String // JSON
+  activities      String // JSON
+  transport       String // JSON
+  hotelPriceRange String
+  touristLevel    String // Low, Medium, High
+  pros            String // JSON
+  cons            String // JSON
+  imageUrl        String?
+}

@@ -13,15 +13,15 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
 
     const images = {
         exterior: [
-            '/germany/leipzig/thomaskirche-aussen.jpg',
-            '/germany/leipzig/thomaskirche-turm.jpg'
+            '/germany/leipzig/thomaskirche.jpg',
+            'https://images.unsplash.com/photo-1548625361-e88c60eb8370?w=800&h=600&fit=crop'
         ],
         interior: [
             '/germany/leipzig/thomaskirche-innenraum-leipzig.jpg'
         ],
         music: [
-            '/germany/leipzig/thomaskirche-orgel.jpg',
-            '/germany/leipzig/thomaskirche-chor.jpg'
+            'https://images.unsplash.com/photo-1515169067750-d51a73b0516c?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1465847899078-b413929f7120?w=800&h=600&fit=crop'
         ]
     };
 
@@ -33,13 +33,13 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                         <h3 style={{ color: '#0ea5e9', marginBottom: '1rem' }}>Thomaskirche Leipzig</h3>
                         {/* Großes Hauptbild - vollbreite Darstellung */}
                         <div style={{ marginBottom: '2rem' }}>
-                            <img 
-                                src="/germany/leipzig/thomaskirche.jpg" 
-                                alt="Thomaskirche Leipzig" 
-                                style={{ 
-                                    width: '100%', 
-                                    height: window.innerWidth > 768 ? '500px' : '300px', 
-                                    objectFit: 'cover', 
+                            <img
+                                src="/germany/leipzig/thomaskirche.jpg"
+                                alt="Thomaskirche Leipzig"
+                                style={{
+                                    width: '100%',
+                                    height: window.innerWidth > 768 ? '500px' : '300px',
+                                    objectFit: 'cover',
                                     borderRadius: '12px',
                                     boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
                                 }}
@@ -48,22 +48,22 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                                 }}
                             />
                         </div>
-                        
+
                         {/* Informationsbereich */}
                         <div>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                                Die Thomaskirche ist eine der berühmtesten Kirchen Deutschlands und weltbekannt als 
-                                Wirkungsstätte von Johann Sebastian Bach. Hier wirkte der große Komponist von 1723 bis 
+                                Die Thomaskirche ist eine der berühmtesten Kirchen Deutschlands und weltbekannt als
+                                Wirkungsstätte von Johann Sebastian Bach. Hier wirkte der große Komponist von 1723 bis
                                 zu seinem Tod 1750 als Thomaskantor und schuf unvergängliche Meisterwerke.
                             </p>
                             <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                                 <div>
                                     <h4>📍 Standort</h4>
-                                    <p>Thomaskirchhof 18<br/>04109 Leipzig</p>
+                                    <p>Thomaskirchhof 18<br />04109 Leipzig</p>
                                 </div>
                                 <div>
                                     <h4>🕒 Öffnungszeiten</h4>
-                                    <p>Täglich 09:00 - 18:00 Uhr<br/>Sonn-/Feiertags ab 13:00 Uhr</p>
+                                    <p>Täglich 09:00 - 18:00 Uhr<br />Sonn-/Feiertags ab 13:00 Uhr</p>
                                 </div>
                             </div>
                             <div>
@@ -87,11 +87,11 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             🏛️ Außenarchitektur & Geschichte
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                             {images.exterior.map((img, index) => (
                                 <div key={index} style={{ position: 'relative' }}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Thomaskirche Außen ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -103,11 +103,11 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #8B5A2B, #D2691E)',
@@ -146,7 +146,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: '#f8fafc',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -155,9 +155,9 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 🏗️ Architektonische Besonderheiten
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                                 gap: '1.5rem'
                             }}>
                                 <div>
@@ -187,17 +187,17 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             ⛪ Innenraum & Ausstattung
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
                             {images.interior.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Thomaskirche Innen ${index + 1}`}
-                                        style={{ 
-                                            width: '100%', 
-                                            height: '300px', 
-                                            objectFit: 'cover', 
+                                        style={{
+                                            width: '100%',
+                                            height: '300px',
+                                            objectFit: 'cover',
                                             borderRadius: '12px',
                                             boxShadow: '0 6px 20px rgba(0,0,0,0.12)',
                                             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -219,11 +219,11 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'white',
@@ -274,7 +274,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: 'linear-gradient(135deg, #FEF3C7, #FDE68A)',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -283,9 +283,9 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             <h4 style={{ color: '#92400E', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 📖 Besondere Ausstattung
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '1.5rem',
                                 fontSize: '0.95rem'
                             }}>
@@ -316,11 +316,11 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem', textAlign: 'center' }}>
                             🎵 Musik & Thomanerchor
                         </h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                             {images.music.map((img, index) => (
                                 <div key={index}>
-                                    <img 
+                                    <img
                                         src={img}
                                         alt={`Thomaskirche Musik ${index + 1}`}
                                         style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
@@ -332,11 +332,11 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             ))}
                         </div>
 
-                        <div style={{ 
-                            display: 'grid', 
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-                            gap: '2rem', 
-                            marginBottom: '3rem' 
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                            gap: '2rem',
+                            marginBottom: '3rem'
                         }}>
                             <div style={{
                                 background: 'linear-gradient(135deg, #DC2626, #991B1B)',
@@ -378,7 +378,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: 'linear-gradient(135deg, #F3F4F6, #E5E7EB)',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -387,9 +387,9 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             <h4 style={{ color: '#374151', marginBottom: '1.5rem', textAlign: 'center' }}>
                                 🎭 Regelmäßige Konzerte & Aufführungen
                             </h4>
-                            <div style={{ 
-                                display: 'grid', 
-                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', 
+                            <div style={{
+                                display: 'grid',
+                                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
                                 gap: '2rem'
                             }}>
                                 <div style={{
@@ -426,7 +426,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                             </div>
                         </div>
 
-                        <div style={{ 
+                        <div style={{
                             background: '#FEF3C7',
                             padding: '2rem',
                             borderRadius: '15px',
@@ -457,7 +457,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
                 return (
                     <div>
                         <h3 style={{ color: '#0ea5e9', marginBottom: '2rem' }}>💰 Besichtigungspreise & Führungen</h3>
-                        
+
                         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr', gap: '2rem', marginBottom: '2rem' }}>
                             <div style={{ background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '2px solid #e2e8f0' }}>
                                 <h4 style={{ color: '#0ea5e9', marginBottom: '1.5rem' }}>⛪ Kirchenbesichtigung</h4>
@@ -559,7 +559,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
     };
 
     return (
-        <div 
+        <div
             style={{
                 position: 'fixed',
                 top: 0,
@@ -575,7 +575,7 @@ const ThomaskirchModal: React.FC<ThomaskirchModalProps> = ({ isOpen, onClose }) 
             }}
             onClick={onClose}
         >
-            <div 
+            <div
                 style={{
                     backgroundColor: 'white',
                     borderRadius: '12px',

@@ -6,6 +6,12 @@ import toursRouter from "./routes/tours";
 import bookingsRouter from "./routes/bookings";
 import blogRouter from "./routes/blog";
 import contactRouter from "./routes/contact";
+// NEW ROUTERS
+import carRentalRouter from "./routes/carRental";
+import travelAlertsRouter from "./routes/travelAlerts";
+import adventuresRouter from "./routes/adventures";
+import tripPlannerRouter from "./routes/tripPlanner";
+import destinationComparisonRouter from "./routes/destinationComparison";
 
 const app = express();
 
@@ -20,10 +26,17 @@ app.use("/api/bookings", bookingsRouter);
 app.use("/api/blog", blogRouter);
 app.use("/api/contact", contactRouter);
 
+// NEW API ROUTES
+app.use("/api/car-rental", carRentalRouter);
+app.use("/api/travel-alerts", travelAlertsRouter);
+app.use("/api/adventures", adventuresRouter);
+app.use("/api/trip-planner", tripPlannerRouter);
+app.use("/api/destination-comparison", destinationComparisonRouter);
+
 // Root-Route
 app.get("/", (_req, res) => {
   res.send(
-    "Abschlussprojekt-Reiseinfo-Europa-Asien-Afrika API läuft. Verwenden Sie /api/destinations, /api/tours, /api/bookings"
+    "TravelDreams API läuft. Verwenden Sie /api/destinations, /api/tours, /api/bookings, /api/car-rental, /api/travel-alerts, /api/adventures, /api/trip-planner, /api/destination-comparison"
   );
 });
 
